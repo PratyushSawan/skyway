@@ -40,7 +40,6 @@ let Experiences = async () => {
         return data
     }
 
-
     let data = {
         name: 'HOUSE BOAT',
         location: 'Alleppey | Alleppey-Kumarakom',
