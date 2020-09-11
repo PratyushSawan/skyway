@@ -16,6 +16,9 @@ import {
     FaStickyNote,
 } from 'react-icons/fa'
 
+import ReactHtmlParser from 'react-html-parser';
+
+
 import CompBanner from './compBanner'
 import BreadcrumComp from '../breadcrum/breadcrum'
 import Banner from '../banner/banner'
@@ -177,7 +180,7 @@ let Packages = () => {
                             <div id={'section_1'}>
                                 <div id='overview' style={{ padding: '20px' }}>
                                     <h2>OVERVIEW</h2>
-                                    <p>{packageDetails.overview}</p>
+                                    {ReactHtmlParser(packageDetails.overview)}
                                 </div>
                             </div>
                             <div id={'section_2'}>
