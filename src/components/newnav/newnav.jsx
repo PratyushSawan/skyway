@@ -26,7 +26,6 @@ const NewNav = () => {
                         <div>
 
                             <a href={'/packages/' + pkg._id}>
-                                Golden Triangle
                                 {pkg.packageName}
 
                             </a>
