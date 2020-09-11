@@ -18,7 +18,6 @@ import {
 
 import ReactHtmlParser from 'react-html-parser';
 
-
 import CompBanner from './compBanner'
 import BreadcrumComp from '../breadcrum/breadcrum'
 import Banner from '../banner/banner'
