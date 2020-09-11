@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.footer {
+    padding: 20px;
+    background-color: #eeeeee;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.row_head_txt {
+    color: #000000;
+    font-weight: bold;
+}
+
+.foot_link a {
+    text-decoration: none;
+    color: rgb(34, 34, 34);
+}
+.footer_line1 {
+    padding: 5px;
+    margin: 5px;
+    width: 100%;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    color: rgb(82, 82, 82);
+}
+
+.footer_line2 {
+    color: #1f1f1f;
+}

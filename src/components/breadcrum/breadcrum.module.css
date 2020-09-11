@@ -1,0 +1,14 @@
+.breadCrum{
+    padding: 15px 0px 15px 100px;
+    font-size: 18pt;
+    font-weight: bold;
+    box-shadow: 1px 1px 15px #b8b8b8;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px){
+    .breadCrum {
+        display: none;
+    }
+}

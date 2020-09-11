@@ -1,0 +1,42 @@
+.sidebar {
+    display: block;
+    z-index: 0;
+    width: fit-content;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #3e4094;
+}
+
+.anchorPane {
+    padding-top: 80px;
+}
+
+.anchorPane ul {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.anchorPane ul li {
+    list-style: none;
+    color: white;
+    display: flex;
+    width: 100%;
+    padding: 10px 10px 10px 20px;
+    font-size: 0.9rem;
+}
+
+.anchorPane ul li a {
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.anchorPane ul li a svg {
+    margin-right: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .sidebar {
+        display: none;
+        width: 0px;
+    }
+}

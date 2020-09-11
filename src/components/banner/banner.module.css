@@ -1,0 +1,77 @@
+.banner {
+    width: 100%;
+    height: 50vh;
+    background-size: cover;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.068);
+    width: 100%;
+    height: 60vh;
+}
+
+.content {
+    padding: 100px 0px 0px 0px;
+}
+
+.headingTxt {
+    color: white;
+    font-size: 25pt;
+}
+
+.duration {
+    color: rgb(204, 241, 255);
+}
+
+.places {
+    color: white;
+}
+
+.bookNowContent {
+    float: right;
+    color: white;
+    padding: 10px 30px 10px 30px;
+    background-color: rgba(0, 0, 0, 0.466);
+}
+
+.bookNow {
+    width: 100%;
+    padding-right: 100px;
+    position: absolute;
+    top: 47vh;
+}
+
+.bookNowContent button {
+    margin: 5px;
+    width: 160px;
+}
+
+.mobileView {
+    padding: 10px;
+    display: none;
+}
+
+@media only screen and (max-width: 800px) {
+    .mobileView {
+        display: block;
+    }
+
+    .bookNow {
+        display: none;
+        left: 0;
+    }
+    .content {
+        display: none;
+    }
+
+    .banner {
+        height: 40vh;
+    }
+    .overlay {
+        height: 40vh;
+    }
+
+    .duration {
+        color: #0084ff;
+    }
+}

@@ -1,0 +1,13 @@
+@import '~react-image-gallery/styles/css/image-gallery.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    margin: 0px;
+    padding: 155px 0px 0px 0px;
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    font-size: 19px;
+}

@@ -1,0 +1,37 @@
+.newnav {
+    background-color: white;
+    width: fit-content;
+    display: flex;
+    height: 500px;
+    padding: 10px;
+}
+
+.newnav div b {
+    color: blue;
+}
+
+.newnav div a {
+    color: blue;
+}
+
+.newnav div img {
+    width: 100%;
+}
+
+.newnav div {
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.newnav div div {
+    width: 200px;
+    text-align: left;
+    color: black;
+}
+
+.newnav div div a {
+    color: black;
+    padding: 2px;
+}

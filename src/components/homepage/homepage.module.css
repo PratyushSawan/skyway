@@ -1,0 +1,141 @@
+.mycard {
+    border: none;
+    height: 100%;
+    width: fit-content;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 1px 1px 15px #ddd;
+    transition-duration: 0.5s;
+}
+
+.headingTxt {
+    padding: 10px;
+    font-size: 18pt;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.customCard {
+    width: 550px;
+    overflow: hidden;
+    background-color: white;
+    height: 200px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    margin: 20px;
+}
+
+.cardContent {
+    padding: 20px;
+}
+.cardContent button {
+    background-color: #0059ff;
+    color: white;
+    border: none;
+    width: 80%;
+    margin: 20px;
+    padding: 5px 20px 5px 20px;
+    margin-top: 20px;
+}
+
+.why {
+    padding: 60px;
+    text-align: center;
+    background-color: rgb(241, 241, 241);
+}
+
+.whyskyway {
+    text-align: left;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .customCard {
+        width: 250px;
+        height: 320px;
+    }
+    .cardContent {
+        width: 250px;
+    }
+    .cardContent button {
+        margin-top: 10px;
+    }
+}
+
+.smallTxt {
+    color: #555555;
+    width: 100%;
+    text-align: center;
+}
+
+.mycard:hover {
+    width: 110%;
+    height: 110%;
+    transform: translateX(-5%) translateY(-5%);
+    transition-duration: 0.5s;
+    position: absolute;
+    z-index: 1;
+}
+
+.customCard:hover {
+    transition-duration: 0.5s;
+    width: 105%;
+    height: 105%;
+    transform: translateX(-2.5%) translateY(-2.5%);
+    position: absolute;
+    z-index: 1;
+}
+
+.apop{
+    border-radius: 16px;
+    height : 370px;
+    box-shadow: 5px 5px 15px rgba(180, 180, 180, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 30px 0 30px 0 ;
+    width: 250px;
+    transition-duration: 0.5s;
+}
+
+.apop:hover{
+    transition-duration: 0.5s;
+    position: absolute;
+    transform: translateX(-10px) translateY(-10px);
+    width: 270px;
+    height: 390px;
+    box-shadow: 1px 1px 15px #ddd;
+}
+
+.apopImg{
+    width: 100%;
+    border-radius: 16px 16px 0px 0px;
+}
+.apopDuration{
+    color: blue;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.apopTitle{
+    font-size: 14pt;
+    color: black;
+    padding: 3px 10px 3px 10px;
+}
+
+.apopPrice{
+    font-size: 11pt;
+    padding-top: 20px;
+}
+.apopBtn{
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    font-size: 13pt;
+    padding: 5px;
+    border-radius: 0px 0px 16px 16px ;
+}
+
+

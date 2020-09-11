@@ -1,0 +1,22 @@
+td {
+    width: 200px;
+    padding: 5px;
+}
+
+table {
+    width: 100%;
+}
+
+.lcard {
+    width: 70vw;
+    box-shadow: 1px 1px 15px #ddd;
+    padding: 60px;
+    margin: 20px;
+}
+
+.rcard {
+    width: 30vw;
+    padding: 30px;
+    margin: 20px;
+    box-shadow: 1px 1px 15px #ddd;
+}
