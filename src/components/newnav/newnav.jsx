@@ -1,41 +1,40 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useState } from 'react-redux'
 import style from './newnav.module.css'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 const NewNav = () => {
+
+    const [pkg, setpkg] = useState([])
+    async function packagesList() {
+        const data = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
+        setpkg(data.data)
+    }
+    packagesList();
+    useEffect(() => {
+        console.log(pkg)
+    }, [pkg])
+
     return (
+
         <div className={style.newnav}>
             <div>
+
                 <b>Discover India Tours for Foreign tourist's visiting India</b>
-                <div>
-                    <a href={'/packages/5efb56cd5a26d88311d7a3bf'}>
-                        Golden Triangle
-                    </a>
-                </div>
-                <div>
-                    <Link to={'/packages/5f0588b7641a400cbd4e7cae'}>
-                        Best of kerela
-                    </Link>
-                </div>
-                <div>
-                    <Link to={'/packages/5f058f6e641a400cbd4e7cbf'}>
-                        Indian highlights
-                    </Link>
-                </div>
-                <div>
-                    <Link to={'/packages/5f059100641a400cbd4e7cd2'}>
-                        A journey through many worlds
-                    </Link>
-                </div>
-                <div>
-                    <Link to={'/'}>Golden Triangle package</Link>
-                </div>
-                <div>
-                    <Link to={'/'}>Royal Rajasthan</Link>
-                </div>
-                <Link style={{ color: 'blue' }} to={'/'}>
-                    more tours
-                </Link>
+                {pkg.length ? pkg.map((pkg) => {
+                    return (
+                        <div>
+
+                            <a href={'/packages/' + pkg._id}>
+                                Golden Triangle
+                                {pkg.packageName}
+
+                            </a>
+                        </div>
+                    )
+                }) : <p>No Packages in This Group Yet!</p>}
+
                 <img src={require('../asserts/images/taj.png')} alt='' />
             </div>
             <div>

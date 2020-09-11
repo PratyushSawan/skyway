@@ -98,7 +98,7 @@ let Packages = () => {
                     <Banner
                         image={packageDetails.imageUrl}
                         duration={packageDetails.duration}
-                        places={packageDetails.duration}
+                        places={packageDetails.place}
                     />
                     <BreadcrumComp />
                     <div className='row'>
