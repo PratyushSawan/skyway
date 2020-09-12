@@ -38,7 +38,7 @@ let Experiences = async () => {
     async function packagesList() {
         const data = await axios.get("https://skyway-server.herokuapp.com/packages/getAllPackages")
         return data
-    } 
+    }
 
     let data = {
         name: 'HOUSE BOAT',

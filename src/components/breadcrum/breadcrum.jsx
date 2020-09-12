@@ -27,7 +27,7 @@ let BreadcrumComp = (props) => {
                             marginRight: '5px',
                         }}
                     />
-                    <span>GOLDEN TRIANGLE TOUR PACKAGE</span>
+                    <span>{props.tourName}</span>
                 </Breadcrumb.Item>
             </Breadcrumb>
         </div>

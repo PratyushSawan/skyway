@@ -18,7 +18,7 @@ let Banner = (props) => {
                     <div className={bannerStyle.bookNow}>
                         <div className={bannerStyle.bookNowContent}>
                             <p>Starts at (per person)</p>
-                            <h2 style={{color : 'white'}}>₹ 19250</h2>
+                            <h2 style={{ color: 'white' }}>₹ {props.pricingAt}</h2>
                             <button className={'btn btn-primary'}>
                                 Enquiry
                             </button>
@@ -33,7 +33,7 @@ let Banner = (props) => {
                     {props.duration}
                 </div>
                 <p>Starts at (per person)</p>
-                <h2 style={{color : 'white'}}>₹ 19250</h2>
+                <h2 style={{ color: 'white' }}>₹ {props.pricingAt}</h2>
                 <button
                     style={{ marginLeft: '20px' }}
                     className={'btn btn-primary'}

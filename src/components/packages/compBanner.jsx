@@ -4,7 +4,7 @@ import { BsClock } from 'react-icons/bs'
 import { MdCardTravel, MdPlace } from 'react-icons/md'
 import { Divider } from 'antd'
 
-const CompBanner = ({duration}) => {
+const CompBanner = ({ duration, pkgname, places }) => {
     return (
         <div
             className='row'
@@ -30,7 +30,7 @@ const CompBanner = ({duration}) => {
                         <span style={{ fontWeight: 'bold' }}>Tour name</span>
                         <br />
                         <span style={{ color: '#555' }}>
-                            Golden Triangle Package
+                            {pkgname}
                         </span>
                     </div>
                 </div>
@@ -72,7 +72,7 @@ const CompBanner = ({duration}) => {
                         </span>
                         <br />
                         <span style={{ color: '#555' }}>
-                            DELHI , AGRA , JAIPUR
+                            {places}
                         </span>
                     </div>
                 </div>

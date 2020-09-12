@@ -101,6 +101,7 @@ let Packages = () => {
                         image={packageDetails.imageUrl}
                         duration={packageDetails.duration}
                         places={packageDetails.place}
+                        pricingAt={packageDetails.pricing[0].cost.standard}
                     />
                     <BreadcrumComp />
                     <div className='row'>
@@ -174,7 +175,7 @@ let Packages = () => {
                             </div>
                         </div>
                         <div style={{ backgroundColor: '#fafafa' }} className='col-md-10' >
-                            <CompBanner duration={packageDetails.duration} />
+                            <CompBanner pkgname={packageDetails.packageName} places={packageDetails.place} duration={packageDetails.duration} />
 
                             <div id={'section_1'}>
                                 <div id='overview' style={{ padding: '20px' }}>
@@ -462,7 +463,7 @@ let Packages = () => {
                             <div id={'section_7'}>
                                 <div id='description' style={{ padding: '20px' }}>
                                     <h2>Description</h2>
-                                    <p>{packageDetails.description}</p>
+                                    {ReactHtmlParser(packageDetails.description)}
                                 </div>
                             </div>
                             <div
