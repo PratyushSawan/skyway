@@ -92,6 +92,18 @@ let Packages = () => {
         makeSidebarSticky()
     }, [packageId])
 
+    function pricingAt() {
+        let prices = [];
+
+        packageDetails.pricing.forEach(price => {
+            prices.push(price.cost.standard)
+        });
+
+        let minPrice = Math.min(...prices)
+
+        return minPrice;
+    }
+
     return packageDetails.length === 0 ? (
         LoadingJSX
     ) : (
@@ -101,7 +113,7 @@ let Packages = () => {
                         image={packageDetails.imageUrl}
                         duration={packageDetails.duration}
                         places={packageDetails.place}
-                        pricingAt={packageDetails.pricing[0].cost.standard}
+                        pricingAt={pricingAt()}
                     />
                     <BreadcrumComp />
                     <div className='row'>
