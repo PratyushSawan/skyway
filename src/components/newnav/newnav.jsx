@@ -10,8 +10,8 @@ const NewNav = () => {
         const data = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
         setpkg(data.data)
     }
-    packagesList();
     useEffect(() => {
+        packagesList();
         console.log(pkg)
     }, [pkg])
 
