@@ -96,7 +96,9 @@ let Packages = () => {
         let prices = [];
 
         packageDetails.pricing.forEach(price => {
-            prices.push(price.cost.standard)
+            if (price.cost.standard != 0) {
+                prices.push(price.cost.standard)
+            }
         });
 
         let minPrice = Math.min(...prices)
@@ -302,35 +304,44 @@ let Packages = () => {
                                                                 <td>{plan.name}</td>
                                                                 <td>
                                                                     {plan.cost
-                                                                        .standard !==
-                                                                        'free' ? (
+                                                                        .standard !=
+                                                                        0 ? (
                                                                             <>₹</>
                                                                         ) : null}
-                                                                    {
+                                                                    {plan.cost
+                                                                        .standard !=
+                                                                        0 ?
                                                                         plan.cost
-                                                                            .standard
+                                                                            .standard :
+                                                                        "Free"
                                                                     }
                                                                 </td>
                                                                 <td>
                                                                     {plan.cost
-                                                                        .deluxe !==
-                                                                        'free' ? (
+                                                                        .deluxe !=
+                                                                        0 ? (
                                                                             <>₹</>
                                                                         ) : null}
-                                                                    {
+                                                                    {plan.cost
+                                                                        .deluxe !=
+                                                                        0 ?
                                                                         plan.cost
-                                                                            .deluxe
+                                                                            .deluxe :
+                                                                        "Free"
                                                                     }
                                                                 </td>
                                                                 <td>
                                                                     {plan.cost
-                                                                        .luxury !==
-                                                                        'free' ? (
+                                                                        .luxury !=
+                                                                        0 ? (
                                                                             <>₹</>
                                                                         ) : null}
-                                                                    {
+                                                                    {plan.cost
+                                                                        .luxury !=
+                                                                        0 ?
                                                                         plan.cost
-                                                                            .luxury
+                                                                            .luxury :
+                                                                        "Free"
                                                                     }
                                                                 </td>
                                                             </tr>
