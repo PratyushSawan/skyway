@@ -2,7 +2,7 @@ import React from 'react'
 import searchStyle from './style.css'
 import { FaClock, FaArrowRight } from 'react-icons/fa'
 
-let CustomCard = ({ allpkgs }) => {
+let CustomCard = ({ pkgs }) => {
     const costStartsAt = (pricing) => {
         let prices = [];
 
@@ -16,15 +16,13 @@ let CustomCard = ({ allpkgs }) => {
 
         return minPrice;
     }
-
-    let pkgs = allpkgs.map((pkg) => {
-        if (pkg.category[1].toLowerCase() === "Discover India Tours for Foreign tourists visiting India".toLowerCase())
-            return pkg
+    pkgs = pkgs.map((pkg) => {
+        return (pkg.category[1].toLowerCase() === "Discover India Tours for Foreign tourists visiting India".toLowerCase()) ? pkg : null
     })
 
     let pkgCards = pkgs.map((pkg, i) => {
 
-        return (
+        return (pkg ? (
             <div className='row py-3' key={"key-" + i}>
                 <div className='col-md-5'>
                     <img
@@ -58,8 +56,7 @@ let CustomCard = ({ allpkgs }) => {
                         </button></a>
                 </div>
             </div>
-
-        )
+        ) : "")
     })
 
     return (

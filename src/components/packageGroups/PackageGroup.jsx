@@ -108,7 +108,7 @@ let PackageGroup = () => {
                                 Filter
                                 </div>
                         </div>
-                        <CustomCard allpkgs={pkgs} />
+                        <CustomCard pkgs={pkgs} />
                         <br />
 
                     </div>
