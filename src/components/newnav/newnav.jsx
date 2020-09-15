@@ -7,7 +7,7 @@ const NewNav = () => {
 
     const [pkgs, setpkgs] = useState([])
     async function packagesList() {
-        const data = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
+        const data = await axios.get("http://localhost:4545/api/v1/packages/getAllPackages")
         setpkgs(data.data)
     }
     useEffect(() => {
@@ -22,10 +22,9 @@ const NewNav = () => {
 
                 <b>Discover India Tours for Foreign tourist's visiting India</b>
                 {pkgs.length ? pkgs.map((pkg, i) => {
-                    if (i < 3 && pkg.category[1].toLowerCase() === "Discover India Tours for Foreign tourists visiting India".toLowerCase()) {
+                    if (i < 7 && pkg.category[1].toLowerCase() === "Discover India Tours for Foreign tourists visiting India".toLowerCase()) {
                         return (
                             <div>
-
                                 <a href={'/packages/' + pkg._id}>
                                     {pkg.packageName}
                                 </a>

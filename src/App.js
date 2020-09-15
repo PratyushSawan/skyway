@@ -35,7 +35,7 @@ import VisaAssistance from './components/visaAssistance/visa'
 import ThingsToKnow from './components/thingsToKnow/thingsToKnow'
 import TermsAndCondition from './components/termscondition/termscondition'
 import BookingCondition from './components/bookingConditions/bookingCondition'
-import packageGroup from './components/packageGroups'
+import PackageGroup from './components/packageGroups/PackageGroup'
 
 function App() {
     return (
@@ -50,7 +50,7 @@ function App() {
                 <Route
                     exact
                     path={'/group/:groupName'}
-                    component={packageGroup}
+                    component={PackageGroup}
                 />
                 <Route exact path={'/search'} component={Search} />
                 <Route exact path={'/experiences'} component={Experiences} />
