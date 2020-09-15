@@ -80,7 +80,7 @@ let Packages = () => {
 
     useEffect(() => {
         //Fetching the packages
-        fetch(`http://localhost:4545/api/v1/packages/getPackage/${packageId}`)
+        fetch(`https://skyway-server.herokuapp.com/api/v1/packages/getPackage/${packageId}`)
             .then((res) => {
                 return res.json()
             })
