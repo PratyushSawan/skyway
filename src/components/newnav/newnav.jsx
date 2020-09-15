@@ -5,15 +5,15 @@ import axios from 'axios'
 
 const NewNav = () => {
 
-    const [pkg, setpkg] = useState([])
+    const [pkgs, setpkgs] = useState([])
     async function packagesList() {
         const data = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
-        setpkg(data.data)
+        setpkgs(data.data)
     }
     useEffect(() => {
         packagesList();
-        console.log(pkg)
-    }, [pkg])
+        console.log(pkgs)
+    }, [pkgs])
 
     return (
 
@@ -21,18 +21,19 @@ const NewNav = () => {
             <div>
 
                 <b>Discover India Tours for Foreign tourist's visiting India</b>
-                {pkg.length ? pkg.map((pkg) => {
-                    return (
-                        <div>
+                {pkgs.length ? pkgs.map((pkg, i) => {
+                    if (i < 3 && pkg.category[1].toLowerCase() === "Discover India Tours for Foreign tourists visiting India".toLowerCase()) {
+                        return (
+                            <div>
 
-                            <a href={'/packages/' + pkg._id}>
-                                {pkg.packageName}
-
-                            </a>
-                        </div>
-                    )
+                                <a href={'/packages/' + pkg._id}>
+                                    {pkg.packageName}
+                                </a>
+                            </div>
+                        )
+                    }
                 }) : <p>No Packages in This Group Yet!</p>}
-
+                <a href="/group/Discover-India-Tours-for-Foreign-tourists-visiting-India" style={{ color: 'blue' }}>See More</a>
                 <img src={require('../asserts/images/taj.png')} alt='' />
             </div>
             <div>

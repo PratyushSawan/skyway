@@ -35,6 +35,7 @@ import VisaAssistance from './components/visaAssistance/visa'
 import ThingsToKnow from './components/thingsToKnow/thingsToKnow'
 import TermsAndCondition from './components/termscondition/termscondition'
 import BookingCondition from './components/bookingConditions/bookingCondition'
+import packageGroup from './components/packageGroups'
 
 function App() {
     return (
@@ -45,6 +46,11 @@ function App() {
                     exact
                     path={'/packages/:packageId'}
                     component={Package}
+                />
+                <Route
+                    exact
+                    path={'/group/:groupName'}
+                    component={packageGroup}
                 />
                 <Route exact path={'/search'} component={Search} />
                 <Route exact path={'/experiences'} component={Experiences} />
