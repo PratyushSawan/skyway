@@ -1,14 +1,15 @@
 import React from 'react'
-import searchStyle from './style.css'
 import { FaClock, FaArrowRight } from 'react-icons/fa'
 import ReactHtmlParser from 'react-html-parser';
+import searchStyle from './jungle.module.css'
 
 let CustomCard = ({ pkgs, tourName }) => {
+    console.log(pkgs);
     const costStartsAt = (pricing) => {
         let prices = [];
 
         pricing.forEach(price => {
-            if (price.cost.standard != 0) {
+            if (price.cost.standard !== 0) {
                 prices.push(price.cost.standard)
             }
         });
@@ -18,7 +19,7 @@ let CustomCard = ({ pkgs, tourName }) => {
         return minPrice;
     }
     pkgs = pkgs.map((pkg) => {
-        return ((pkg.category[0].toLowerCase() === "experiences" && tourName === pkg.category[1]) ? pkg : null)
+        return ((pkg && pkg.length) ? pkg : null)
     })
 
     let pkgCards = pkgs.map((pkg, i) => {

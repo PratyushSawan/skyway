@@ -17,7 +17,7 @@ let CustomCard = ({ pkgs }) => {
         return minPrice;
     }
     pkgs = pkgs.map((pkg) => {
-        return (pkg.category[1].toLowerCase() === "Discover India Tours for Foreign tourists visiting India".toLowerCase()) ? pkg : null
+        return ((pkg.category[1].toLowerCase() === "Discover India Tours for Foreign tourists visiting India".toLowerCase()) ? pkg : null)
     })
 
     let pkgCards = pkgs.map((pkg, i) => {

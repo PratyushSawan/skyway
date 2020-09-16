@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom'
 import HolidayClub from '../holidayClub/holidayClub'
 import PopularHoliday from '../popularHoliday/popularHoliday'
 import axios from 'axios'
+import ReactHtmlParser from 'react-html-parser';
 
 const Ayurveda = () => {
 
@@ -22,7 +23,6 @@ const Ayurveda = () => {
         setpkgs(pkgs)
     }
 
-
     useEffect(() => {
         packagesList()
         if (pkgs && pkgs.length) {
@@ -33,7 +33,7 @@ const Ayurveda = () => {
     const [loading, setloading] = useState(true)
     const Loader = <div className='text-center align-content-center justify-content-center'><img width="500px" src={require("./loader.gif")} alt="" srcset="" /></div>
 
-    let CustomCard = ({ name, place, dec, image }) => {
+    let CustomCard = ({ name, place, dec, image, _id }) => {
         return (
             <div
                 style={{
@@ -81,17 +81,19 @@ const Ayurveda = () => {
                                 fontSize: '12pt',
                             }}
                         >
-                            {dec}
+                            {ReactHtmlParser(dec)}
                         </div>
-                        <button
-                            style={{
-                                margin: '50px 50px 0px 50px',
-                                float: 'right',
-                            }}
-                            className={'btn btn-primary'}
-                        >
-                            VIEW DETAIL <FaArrowRight />
-                        </button>
+                        <a href={"/packages/" + _id}>
+                            <button
+                                style={{
+                                    margin: '50px 50px 0px 50px',
+                                    float: 'right',
+                                }}
+                                className={'btn btn-primary'}
+                            >
+                                VIEW DETAIL <FaArrowRight />
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -126,7 +128,7 @@ const Ayurveda = () => {
                         selected keeping the travellers profile in mind.
                     </p>
                     <Divider />
-                    {loading ? 'LOADING' : pkgs && pkgs.length && !pkgs.every(pkg => pkg == null) ?
+                    {loading ? Loader() : pkgs && pkgs.length && !pkgs.every(pkg => pkg == null) ?
                         pkgs.map((pkg) => (
                             pkg ?
                                 < CustomCard
@@ -134,6 +136,7 @@ const Ayurveda = () => {
                                     name={pkg.packageName}
                                     place={pkg.place}
                                     dec={pkg.description}
+                                    _id={pkg._id}
                                 /> : null
                         )) : <h3 className='text-info font-weight-normal'>No packages found in "Ayurveda" yet.</h3>}
                 </div>

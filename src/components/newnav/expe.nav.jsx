@@ -3,15 +3,19 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 const ExNav = () => {
-    const [pkgs, setpkgs] = useState([])
+
+    const [experiences, setExperiences] = useState([])
     async function packagesList() {
         const data = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
-        setpkgs(data.data)
+
+        setExperiences(data.data.filter((pkg) => {
+            return ((pkg.category[0].toUpperCase() === "EXPERIENCES" && !pkg.category[1]) ? pkg : null)
+        }))
     }
     useEffect(() => {
         packagesList();
-        console.log(pkgs)
-    }, [pkgs])
+        console.log(experiences);
+    }, [experiences])
 
     let sty = {
         width: '200px',
@@ -26,6 +30,15 @@ const ExNav = () => {
                 boxShadow: '1px 1px 15px #555',
             }}
         >
+            {experiences && experiences.length ? experiences.map((pkg, i) => {
+                return (
+                    pkg ?
+                        <a href={'/packages/' + pkg._id} style={sty}>
+                            {pkg.packageName}
+                        </a>
+                        : ""
+                )
+            }) : ""}
             <Link to={'/experiences/ayurveda'} style={sty}>
                 Ayurveda Resorts / Packages
             </Link>

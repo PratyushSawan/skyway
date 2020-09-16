@@ -21,7 +21,7 @@ const NewNav = () => {
             <div>
 
                 <b>Discover India Tours for Foreign tourist's visiting India</b>
-                {pkgs.length ? pkgs.map((pkg, i) => {
+                {pkgs && pkgs.length ? pkgs.map((pkg, i) => {
                     if (i < 7 && pkg.category[1].toLowerCase() === "Discover India Tours for Foreign tourists visiting India".toLowerCase()) {
                         return (
                             <div>

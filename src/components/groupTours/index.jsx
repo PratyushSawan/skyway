@@ -6,7 +6,7 @@ import { Form } from 'react-bootstrap'
 import axios from 'axios'
 import CustomCard from "./CustomCard"
 
-let Jungle = () => {
+let GroupTour = () => {
     const [pkgs, setpkgs] = useState([])
     async function packagesList() {
         const Res = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
@@ -99,4 +99,4 @@ let Jungle = () => {
 
 }
 
-export default Jungle
+export default GroupTour

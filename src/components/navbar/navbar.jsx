@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { FaAlignLeft, FaAngleDown } from 'react-icons/fa'
 import NewNav from '../newnav/newnav'
 import ExNav from '../newnav/expe.nav'
+import ToursNav from '../newnav/groupTours'
 import FlightNav from '../newnav/flight.nav'
 import { useHistory } from 'react-router-dom'
 
@@ -143,7 +144,7 @@ let Navbar = () => {
                         className={navbarStyle.menuDrop}
                     >
                         <div>
-                            <Link to={'/'}>Experiences</Link>
+                            <Link to='#'>Experiences</Link>
                             <div className={navbarStyle.dropdown}>
                                 <ExNav />
                             </div>
@@ -189,8 +190,28 @@ let Navbar = () => {
                             }}
                         />
                     </li>
-                    <li>
-                        <Link to={'/'}>Group Tours</Link>
+                    <li
+                        style={{
+                            display: 'flex',
+                        }}
+                        className={navbarStyle.menuDrop}
+                    >
+                        <div>
+                            <Link to={'/'}>Group Tours</Link>
+                            <div className={navbarStyle.dropdown}>
+                                <ToursNav />
+                            </div>
+                        </div>
+                        <FaAngleDown
+                            style={{
+                                display: 'block',
+                                color: 'white',
+                                position: 'relative',
+                                top: '15px',
+                                right: '10px',
+                            }}
+                        />
+
                     </li>
                     <li>
                         <Link to={'/payOnline'}>Pay Online</Link>
