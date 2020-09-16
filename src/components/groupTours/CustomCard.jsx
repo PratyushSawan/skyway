@@ -18,11 +18,8 @@ let CustomCard = ({ pkgs, tourName }) => {
 
         return minPrice;
     }
-    pkgs = pkgs.map((pkg) => {
-        return ((pkg && pkg.length) ? pkg : null)
-    })
 
-    let pkgCards = pkgs.map((pkg, i) => {
+    let pkgCards = pkgs.filter(pkg => pkg).map((pkg, i) => {
 
         return (pkg ? (
             <div className='row py-3' key={"key-" + i}>

@@ -31,7 +31,7 @@ const Ayurveda = () => {
     }, [pkgs])
 
     const [loading, setloading] = useState(true)
-    const Loader = <div className='text-center align-content-center justify-content-center'><img width="500px" src={require("./loader.gif")} alt="" srcset="" /></div>
+    const LOADER = <div className='text-center align-content-center justify-content-center'><img width="500px" src={require("./loader.gif")} alt="" srcSet="" /></div>
 
     let CustomCard = ({ name, place, dec, image, _id }) => {
         return (
@@ -81,6 +81,8 @@ const Ayurveda = () => {
                                 fontSize: '12pt',
                             }}
                         >
+                            <br />
+                            Description: <br />
                             {ReactHtmlParser(dec)}
                         </div>
                         <a href={"/packages/" + _id}>
@@ -103,12 +105,12 @@ const Ayurveda = () => {
     return (
         <div>
             <SimpleBanner
-                name={'Ayurveda'}
+                name={'AYURVEDA'}
                 image={
                     'https://images.squarespace-cdn.com/content/v1/5cc913ecb7c92c52b20ac69d/1557363951184-0HHGOYT69IU0TGLB3T6H/ke17ZwdGBToddI8pDm48kFmTIaMuDlYTI0ZFaIqqJxZZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PImr6kPDB8fcJW7JmpLOsHHynA68jEn_RnGWS_wUlnTTkKMshLAGzx4R3EDFOm1kBS/Ayurveda_07.jpg'
                 }
             />
-            <BreadcrumComp tourName='AYURVEDA RESORTS / PACKAGES' />
+            <BreadcrumComp category="EXPERIENCES" tourName='AYURVEDA RESORTS - PACKAGES' />
             <div className='row'>
                 <div
                     style={{
@@ -128,7 +130,7 @@ const Ayurveda = () => {
                         selected keeping the travellers profile in mind.
                     </p>
                     <Divider />
-                    {loading ? Loader() : pkgs && pkgs.length && !pkgs.every(pkg => pkg == null) ?
+                    {loading ? LOADER : pkgs && pkgs.length && !pkgs.every(pkg => pkg == null) ?
                         pkgs.map((pkg) => (
                             pkg ?
                                 < CustomCard

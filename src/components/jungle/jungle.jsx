@@ -23,7 +23,7 @@ let Jungle = () => {
     }, [pkgs])
 
     const [loading, setloading] = useState(true)
-    const LOADER = <div className='text-center align-content-center justify-content-center'><img width="500px" src={require("./loader.gif")} alt="" srcset="" /></div>
+    const LOADER = <div className='text-center align-content-center justify-content-center'><img width="500px" src={require("./loader.gif")} alt="" srcSet="" /></div>
 
     return (
         <div>
@@ -33,7 +33,7 @@ let Jungle = () => {
                 }
                 name='JUNGLE LODGES & RESORTS'
             />
-            <BreadcrumComp tourName={"JUNGLE LODGES"} />
+            <BreadcrumComp category="EXPERIENCES" tourName={"JUNGLE LODGES"} />
             <div className='container'>
                 <p style={{ padding: '20px', fontSize: '14pt' }}>
                     The promoters of the property are the Govt. Of Karnataka
@@ -90,7 +90,7 @@ let Jungle = () => {
                         </div>
                     </div>
                     <div className={'col-md-8'}>
-                        {loading ? LOADER : pkgs && pkgs.length ? <CustomCard pkgs={pkgs} tourName="JUNGLE LODGES" /> : <h3 className='text-info font-weight-normal'>No packages found in "Ayurveda" yet.</h3>}
+                        {loading ? LOADER : pkgs && pkgs.length ? <CustomCard pkgs={pkgs} tourName="JUNGLE LODGES" /> : <h3 className='text-info font-weight-normal'>No packages found in "JUNGLE LODGES" yet.</h3>}
                     </div>
                 </div>
             </div>

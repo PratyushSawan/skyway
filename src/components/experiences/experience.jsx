@@ -24,7 +24,7 @@ let Experience = ({ tourName }) => {
     }, [pkgs])
 
     const [loading, setloading] = useState(true)
-    const Loader = <div className='text-center align-content-center justify-content-center'><img width="500px" src={require("./loader.gif")} alt="" srcset="" /></div>
+    const Loader = <div className='text-center align-content-center justify-content-center'><img width="500px" src={require("./loader.gif")} alt="" srcSet="" /></div>
 
     return (
         <div>

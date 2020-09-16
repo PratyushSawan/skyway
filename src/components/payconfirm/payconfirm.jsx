@@ -157,7 +157,7 @@ const PayConfirm = () => {
                         <img
                             src={require("../asserts/images/pay.png")}
                             alt=""
-                            srcset=""
+                            srcSet=""
                         />
                         <br />
                         You will be re-directed to our secure payment gateway

@@ -16,7 +16,7 @@ let BreadcrumComp = (props) => {
                             marginRight: '5px',
                         }}
                     />
-                    <span>Experiences</span>
+                    <span>{props.category}</span>
                 </Breadcrumb.Item>
                 <Breadcrumb.Item>
                     <FaTripadvisor

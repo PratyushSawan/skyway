@@ -12,9 +12,9 @@ const ExNav = () => {
             return ((pkg.category[0].toUpperCase() === "EXPERIENCES" && !pkg.category[1]) ? pkg : null)
         }))
     }
+
     useEffect(() => {
         packagesList();
-        console.log(experiences);
     }, [experiences])
 
     let sty = {
@@ -33,7 +33,7 @@ const ExNav = () => {
             {experiences && experiences.length ? experiences.map((pkg, i) => {
                 return (
                     pkg ?
-                        <a href={'/packages/' + pkg._id} style={sty}>
+                        <a key={'explink' + i} href={'/packages/' + pkg._id} style={sty}>
                             {pkg.packageName}
                         </a>
                         : ""

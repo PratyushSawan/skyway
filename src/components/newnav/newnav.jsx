@@ -12,7 +12,6 @@ const NewNav = () => {
     }
     useEffect(() => {
         packagesList();
-        console.log(pkgs)
     }, [pkgs])
 
     return (
@@ -24,7 +23,7 @@ const NewNav = () => {
                 {pkgs && pkgs.length ? pkgs.map((pkg, i) => {
                     if (i < 7 && pkg.category[1].toLowerCase() === "Discover India Tours for Foreign tourists visiting India".toLowerCase()) {
                         return (
-                            <div>
+                            <div key={pkg._id}>
                                 <a href={'/packages/' + pkg._id}>
                                     {pkg.packageName}
                                 </a>

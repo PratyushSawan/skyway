@@ -4,7 +4,6 @@ import ReactHtmlParser from 'react-html-parser';
 import searchStyle from './jungle.module.css'
 
 let CustomCard = ({ pkgs, tourName }) => {
-    console.log(pkgs);
     const costStartsAt = (pricing) => {
         let prices = [];
 
@@ -18,12 +17,8 @@ let CustomCard = ({ pkgs, tourName }) => {
 
         return minPrice;
     }
-    pkgs = pkgs.map((pkg) => {
-        return ((pkg && pkg.length) ? pkg : null)
-    })
 
     let pkgCards = pkgs.map((pkg, i) => {
-
         return (pkg ? (
             <div className='row py-3' key={"key-" + i}>
                 <div className='col-md-5'>
@@ -102,7 +97,7 @@ let CustomCard = ({ pkgs, tourName }) => {
                                 </div>
             </div>
 
-            {pkgs && pkgs.length && !pkgCards.every(val => !val) ?
+            {pkgs && pkgs.length ?
                 <div>{pkgCards}</div>
                 : <h3 className='text-info font-weight-normal'>No packages found in "{tourName}" yet.</h3>}
         </div>
