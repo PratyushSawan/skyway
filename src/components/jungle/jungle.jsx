@@ -138,9 +138,6 @@ class Jungle extends React.Component {
                                 </div>
                             </div>
                             <CustomCard />
-                            <CustomCard />
-                            <CustomCard />
-                            <CustomCard />
                         </div>
                     </div>
                 </div>

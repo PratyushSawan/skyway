@@ -16,7 +16,7 @@ let BreadcrumComp = (props) => {
                             marginRight: '5px',
                         }}
                     />
-                    <span>DISCOVER INDIA TOUR | INDIA TOUR PACKAGES</span>
+                    <span>Experiences</span>
                 </Breadcrumb.Item>
                 <Breadcrumb.Item>
                     <FaTripadvisor

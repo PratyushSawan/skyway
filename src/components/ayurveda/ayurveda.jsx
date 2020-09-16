@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import SimpleBanner from '../simplebanner/simplebanner'
 import { FaArrowRight } from 'react-icons/fa'
 import { Divider } from 'antd'
@@ -8,50 +8,30 @@ import BreadcrumComp from '../breadcrum/breadcrum'
 import { Link } from 'react-router-dom'
 import HolidayClub from '../holidayClub/holidayClub'
 import PopularHoliday from '../popularHoliday/popularHoliday'
+import axios from 'axios'
 
 const Ayurveda = () => {
-    let data = [
-        {
-            name: 'Indus Valley Ayurvedic Centre',
-            place: 'Mysore, India',
-            dec:
-                'A peaceful sanctuary dedicated to physical purification and health.',
-            image:
-                'https://i.pinimg.com/originals/b3/8a/c3/b38ac38fb6f2b7b03614117824979c96.jpg',
-        },
-        {
-            name: 'Ayurvedagram Heritage Wellness Centre',
-            place: 'Banagaluru, India',
-            dec:
-                'Rejuvenation programs suited to your constitution and lifestyle',
-            image:
-                'https://r-cf.bstatic.com/images/hotel/max1024x768/718/7181272.jpg',
-        },
-        {
-            name: 'Isola Di Cocco Ayurvedic',
-            place: 'Trivandrum, India',
-            dec:
-                "Projected by the National Geographic Traveller Magazine as one of the 50 best 'must see destinations' in the world",
-            image:
-                'https://i.pinimg.com/474x/75/df/0e/75df0efd0e3bf6403fdf81b586151c29.jpg',
-        },
-        {
-            name: 'Isola Di Cocco Ayurvedic',
-            place: 'Trivandrum, India',
-            dec:
-                "Projected by the National Geographic Traveller Magazine as one of the 50 best 'must see destinations' in the world",
-            image:
-                'https://i.pinimg.com/474x/75/df/0e/75df0efd0e3bf6403fdf81b586151c29.jpg',
-        },
-        {
-            name: 'Isola Di Cocco Ayurvedic',
-            place: 'Trivandrum, India',
-            dec:
-                "Projected by the National Geographic Traveller Magazine as one of the 50 best 'must see destinations' in the world",
-            image:
-                'https://i.pinimg.com/474x/75/df/0e/75df0efd0e3bf6403fdf81b586151c29.jpg',
-        },
-    ]
+
+    const [pkgs, setpkgs] = useState([])
+    async function packagesList() {
+        const data = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
+        let pkgs = data.data.map((pkg) => {
+            return (pkg.category[0].toLowerCase() === "experiences" && "AYURVEDA RESORTS / PACKAGES" === pkg.category[1]) ? pkg : null
+        })
+        console.log(pkgs);
+        setpkgs(pkgs)
+    }
+
+
+    useEffect(() => {
+        packagesList()
+        if (pkgs && pkgs.length) {
+            setloading(false);
+        }
+    }, [pkgs])
+
+    const [loading, setloading] = useState(true)
+    const Loader = <div className='text-center align-content-center justify-content-center'><img width="500px" src={require("./loader.gif")} alt="" srcset="" /></div>
 
     let CustomCard = ({ name, place, dec, image }) => {
         return (
@@ -126,7 +106,7 @@ const Ayurveda = () => {
                     'https://images.squarespace-cdn.com/content/v1/5cc913ecb7c92c52b20ac69d/1557363951184-0HHGOYT69IU0TGLB3T6H/ke17ZwdGBToddI8pDm48kFmTIaMuDlYTI0ZFaIqqJxZZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PImr6kPDB8fcJW7JmpLOsHHynA68jEn_RnGWS_wUlnTTkKMshLAGzx4R3EDFOm1kBS/Ayurveda_07.jpg'
                 }
             />
-            <BreadcrumComp />
+            <BreadcrumComp tourName='AYURVEDA RESORTS / PACKAGES' />
             <div className='row'>
                 <div
                     style={{
@@ -146,14 +126,16 @@ const Ayurveda = () => {
                         selected keeping the travellers profile in mind.
                     </p>
                     <Divider />
-                    {data.map((d) => (
-                        <CustomCard
-                            image={d.image}
-                            name={d.name}
-                            place={d.place}
-                            dec={d.dec}
-                        />
-                    ))}
+                    {loading ? 'LOADING' : pkgs && pkgs.length && !pkgs.every(pkg => pkg == null) ?
+                        pkgs.map((pkg) => (
+                            pkg ?
+                                < CustomCard
+                                    image={pkg.imageUrl}
+                                    name={pkg.packageName}
+                                    place={pkg.place}
+                                    dec={pkg.description}
+                                /> : null
+                        )) : <h3 className='text-info font-weight-normal'>No packages found in "Ayurveda" yet.</h3>}
                 </div>
                 <div className='col-3'>
                     <HolidayClub />

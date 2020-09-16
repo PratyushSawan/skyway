@@ -12,7 +12,7 @@ import Navbar from './components/navbar/navbar'
 import Footer from './components/footer/footer'
 import Package from './components/packages/packages'
 import Search from './components/search/search'
-import Experiences from './components/experiences/expericences'
+import Experiences from './components/experiences/experience'
 import PayOnline from './components/payonline/payonline'
 import Page404 from './components/404page/404'
 import BookNow from './components/booknow/booknow'
@@ -53,7 +53,7 @@ function App() {
                     component={PackageGroup}
                 />
                 <Route exact path={'/search'} component={Search} />
-                <Route exact path={'/experiences'} component={Experiences} />
+                <Route exact path={'/experiences'} render={(props) => <Experiences {...props} tourName={``} />} /> />
                 <Route exact path={'/payOnline'} component={PayOnline} />
                 <Route
                     exact
@@ -65,7 +65,14 @@ function App() {
                     path={'/booking_details/:pacId'}
                     component={BookNow}
                 />
-                <Route exact path={'/ayurveda'} component={Ayurveda} />
+                {/* experiences section */}
+                <Route exact path={'/experiences/ayurveda'} component={Ayurveda} />
+                <Route exact path={'/experiences/DayTrip-Excursions'} render={(props) => <Experiences {...props} tourName={`DAY TRIPS / EXCURSIONS`} />} />
+                <Route exact path={'/experiences/indiancitytours'} render={(props) => <Experiences {...props} tourName={`INDIAN CITY TOURS`} />} /> />
+                <Route exact path={'/experiences/mysore-dasara-tours'} render={(props) => <Experiences {...props} tourName={`MYSORE DASARA TOURS`} />} /> />
+                <Route exact path={'/experiences/trupati-special-darshan'} render={(props) => <Experiences {...props} tourName={`TIRUPATI SPECIAL DARSHAN TOURS`} />} /> />
+                <Route exact path={'/experiences/weekend-gateways'} render={(props) => <Experiences {...props} tourName={`WEEKEND GETAWAYS`} />} /> />
+                {/*  */}
                 <Route exact path={'/jungle'} component={Jungle} />
                 <Route exact path={'/aboutus'} component={AboutUs} />
                 <Route exact path={'/career'} component={Career} />
