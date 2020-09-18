@@ -50,7 +50,7 @@ function App() {
                 />
                 <Route
                     exact
-                    path={'/group/:groupName'}
+                    path={'/holidays/:groupId'}
                     component={PackageGroup}
                 />
                 <Route exact path={'/search'} component={Search} />

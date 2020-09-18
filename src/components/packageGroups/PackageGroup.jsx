@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import BreadcrumComp from '../breadcrum/breadcrum'
 import SimpleBanner from '../simplebanner/simplebanner'
 import { Divider } from 'antd'
-
+import { useParams } from 'react-router-dom'
 import { Form } from 'react-bootstrap'
 import axios from 'axios'
 import CustomCard from './CustomCard';
@@ -10,8 +10,13 @@ import CustomCard from './CustomCard';
 let PackageGroup = () => {
 
     const [pkgs, setpkgs] = useState([])
+
+    let { groupId } = useParams()
+
+    console.log(groupId);
+
     async function packagesList() {
-        const data = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
+        const data = await axios.get("http://localhost:4545/api/v1/packages/getAllPackages")
         setpkgs(data.data)
     }
 
@@ -25,9 +30,9 @@ let PackageGroup = () => {
                 image={
                     'https://media-cdn.tripadvisor.com/media/photo-s/01/f8/85/e5/temple-tiger-jungle-lodge.jpg'
                 }
-                name='JUNGLE LODGES & RESORTS'
+                name='DISCOVER INDIA TOURS - INDIA TOUR PACKAGES'
             />
-            <BreadcrumComp />
+            <BreadcrumComp category="HOLIDAY" tourName={'title'} />
             <div className='container'>
                 <p style={{ padding: '20px', fontSize: '14pt' }}>
                     The promoters of the property are the Govt. Of Karnataka
