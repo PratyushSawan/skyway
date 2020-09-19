@@ -34,15 +34,17 @@ const NewNav = () => {
         packagesList();
     }, [pkgs])
 
+    let [indiapkgs, setindiapkgs] = useState(0)
+
     return (
 
         <div className={style.newnav}>
             <div>
                 <b>Discover India Tours for Foreign tourist's visiting India</b>
                 {pkgs && pkgs.length ? pkgs.map((pkg, i) => {
-                    return (i < 7 && pkg.category[1].toLowerCase() === "Discover India Tours for Foreign tourists visiting India".toLowerCase()) ?
+                    return (pkg.category[1].toLowerCase() === "Discover India Tours for Foreign tourists visiting India".toLowerCase() && indiapkgs < 7 && indiapkgs++) ?
                         (
-                            <div key={pkg._id}>
+                            <div className="pb-2" key={pkg._id}>
                                 <a href={'/packages/' + pkg._id}>
                                     {pkg.packageName}
                                 </a>
@@ -81,7 +83,7 @@ const NewNav = () => {
                 <img src={require('../asserts/images/menu2.png')} alt='' />
             </div>
             <div>
-                <span id="international">
+                <span style={{ width: "auto", background: 'white' }}>
                     <b>International</b>
                     <div className="pb-2" onClick={() => {
                         slideAccordion(1)
