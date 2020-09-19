@@ -15,9 +15,9 @@ let PackageGroup = () => {
     const [found, setFound] = useState(false)
 
     let { groupId, category } = useParams()
+    groupId = groupId.replace(/-/g, ' ')
+    category = category.replace(/-/g, ' ')
     let history = useHistory();
-
-    console.log(groupId);
 
     history.listen((location) => {
         setLoading(true)
@@ -32,7 +32,7 @@ let PackageGroup = () => {
             let temppkgs = [];
             allpkgs.forEach((pkg) => {
                 if (pkg.category[0].toLowerCase() === "holidays"
-                    && pkg.category[2].toLowerCase() === groupId.replace('-', ' ').toLowerCase()) {
+                    && pkg.category[2].toLowerCase() === groupId.toLowerCase()) {
                     setFound(true)
                     temppkgs.push(pkg);
                 }
@@ -82,7 +82,7 @@ let PackageGroup = () => {
                             name='DISCOVER INDIA TOURS - INDIA TOUR PACKAGES'
                         /> : null}
 
-                        <BreadcrumComp category="HOLIDAY" subcat1={category.replace('-', ' ')} tourName={groupId.toUpperCase()} />
+                        <BreadcrumComp category="HOLIDAY" subcat1={category} tourName={groupId.toUpperCase()} />
                         <div className='container'>
                             <p style={{ padding: '20px', fontSize: '14pt' }}>
                                 The promoters of the property are the Govt. Of Karnataka
@@ -164,7 +164,7 @@ let PackageGroup = () => {
                                 </div>
                                     </div>
                                     {pkgs && pkgs.length ?
-                                        <CustomCard pkgs={pkgs} category={category.replace('-', ' ')} group={groupId.replace('-', ' ')} /> : null
+                                        <CustomCard pkgs={pkgs} category={category} group={groupId} /> : null
                                     }
                                     <br />
 
@@ -176,7 +176,7 @@ let PackageGroup = () => {
                     :
                     <div className="text-center py-5 my-5">
                         <h1 className="text-danger">NO PACKAGES FOUND IN:</h1>
-                        <h3 className='text-info'>{category.replace('-', ' ')} - {groupId}</h3>
+                        <h3 className='text-info'>{category} - {groupId}</h3>
                     </div>
             }
 

@@ -40,7 +40,7 @@ const NewNav = () => {
                     <a href={"/holidays/travel-within-india/Central-India"}>Central India</a>
                 </div>
                 <div>
-                    <a href={'/holidays/travel-within-india/East-India'}> a East India</a>
+                    <a href={'/holidays/travel-within-india/East-India'}>East India</a>
                 </div>
                 <div>
                     <a href={'/holidays/travel-within-india/North-India'}>North India</a>
