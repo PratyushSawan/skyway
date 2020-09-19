@@ -92,18 +92,18 @@ const NewNav = () => {
                             overflow: "hidden",
                             transition: 'max-height 0.2s ease-out'
                         }}>
-                            <a className="pb-2" href='/holidays/International/Australia'>Bali</a>
-                            <a className="pb-2" href='/holidays/International/Australia'>Bhutan</a>
-                            <a className="pb-2" href='/holidays/International/Australia'>Cambodia</a>
-                            <a className="pb-2" href='/holidays/International/Australia'>China</a>
-                            <a className="pb-2" href='/holidays/International/Australia'>Dubai</a>
-                            <a className="pb-2" href='/holidays/International/Australia'>Malaysia</a>
-                            <a className="pb-2" href='/holidays/International/Australia'>Maldives</a>
-                            <a className="pb-2" href='/holidays/International/Australia'>Nepal</a>
-                            <a className="pb-2" href='/holidays/International/Australia'>Singapore</a>
-                            <a className="pb-2" href='/holidays/International/Australia'>Sri Lanka</a>
-                            <a className="pb-2" href='/holidays/International/Australia'>Thailand</a>
-                            <a className="pb-2" href='/holidays/International/Australia'>Vietnam</a>
+                            <a className="pb-2" href='/holidays/International/Bali'>Bali</a>
+                            <a className="pb-2" href='/holidays/International/Bhutan'>Bhutan</a>
+                            <a className="pb-2" href='/holidays/International/Cambodia'>Cambodia</a>
+                            <a className="pb-2" href='/holidays/International/China'>China</a>
+                            <a className="pb-2" href='/holidays/International/Dubai'>Dubai</a>
+                            <a className="pb-2" href='/holidays/International/Malaysia'>Malaysia</a>
+                            <a className="pb-2" href='/holidays/International/Maldives'>Maldives</a>
+                            <a className="pb-2" href='/holidays/International/Nepal'>Nepal</a>
+                            <a className="pb-2" href='/holidays/International/Singapore'>Singapore</a>
+                            <a className="pb-2" href='/holidays/International/Sri-Lanka'>Sri Lanka</a>
+                            <a className="pb-2" href='/holidays/International/Thailand'>Thailand</a>
+                            <a className="pb-2" href='/holidays/International/Vietnam'>Vietnam</a>
                         </div>
                     </div>
                     <div className="pb-2" onClick={() => {
