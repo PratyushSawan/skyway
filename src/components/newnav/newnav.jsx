@@ -65,16 +65,22 @@ const NewNav = () => {
                 <span>
                     <b>International</b>
                     <div>
-                        <Link to='/holidays/Honeymoon-Packages/Australia'>Australia</Link>
+                        <Link to='/holidays/International/Asia'>Asia</Link>
                     </div>
                     <div>
-                        <Link to='/holidays/Honeymoon-Packages/Europe'>Europe</Link>
+                        <Link to='/holidays/International/Africa'>Africa</Link>
                     </div>
                     <div>
-                        <Link to='/'>North and south america</Link>
+                        <Link to='/holidays/International/Australia'>Australia</Link>
                     </div>
                     <div>
-                        <Link to='/'>Honeymoon Packages</Link>
+                        <Link to='/holidays/International/Europe'>Europe</Link>
+                    </div>
+                    <div>
+                        <Link to='/holidays/International/North-and-south-america'>North and south america</Link>
+                    </div>
+                    <div>
+                        <Link to='/holidays/International/Honeymoon-Packages'>Honeymoon Packages</Link>
                     </div>
                 </span>
                 <img src={require('../asserts/images/menu3.png')} alt='' />
