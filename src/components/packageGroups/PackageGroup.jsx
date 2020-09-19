@@ -74,15 +74,16 @@ let PackageGroup = () => {
                 </div>
                 :
                 found ?
-                    <div>
-                        {bannerIMG ? <SimpleBanner
-                            image={
-                                bannerIMG
-                            }
-                            name='DISCOVER INDIA TOURS - INDIA TOUR PACKAGES'
-                        /> : null}
+                    <div >
+                        {bannerIMG ?
+                            <SimpleBanner
+                                image={
+                                    bannerIMG
+                                }
+                                name={groupId.toUpperCase() + " TOURS"}
+                            /> : null}
 
-                        <BreadcrumComp category="HOLIDAY" subcat1={category} tourName={groupId.toUpperCase()} />
+                        <BreadcrumComp category="HOLIDAY" tourName={groupId.toUpperCase()} />
                         <div className='container'>
                             <p style={{ padding: '20px', fontSize: '14pt' }}>
                                 The promoters of the property are the Govt. Of Karnataka

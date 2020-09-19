@@ -40,10 +40,7 @@ let CustomCard = ({ pkgs, tourName }) => {
                         <div style={{ float: 'left' }}>
                             Starts at: <b>₹ {costStartsAt(pkg.pricing)} </b>
                         </div>
-                        <div>
-                            Description :
-                        {ReactHtmlParser(pkg.description)}
-                        </div>
+
                     </div>
                     <a href={"/packages/" + pkg._id}>
                         <button

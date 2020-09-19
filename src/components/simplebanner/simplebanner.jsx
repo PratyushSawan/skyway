@@ -13,7 +13,7 @@ const SimpleBanner = (props) => {
                     </div>
                 </div>
             </div>
-            <div style={{padding: "20px", fontSize: "18pt", fontWeight: "bold"}} className={simpleStyle.mobileView}>
+            <div style={{ padding: "20px", fontSize: "18pt", fontWeight: "bold" }} className={simpleStyle.mobileView + ' pl-5 ml-5'}>
                 {props.name}
             </div>
         </div>

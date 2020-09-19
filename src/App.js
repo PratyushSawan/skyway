@@ -37,6 +37,7 @@ import TermsAndCondition from './components/termscondition/termscondition'
 import BookingCondition from './components/bookingConditions/bookingCondition'
 import PackageGroup from './components/packageGroups/PackageGroup'
 import GroupTour from "./components/groupTours";
+import ForeignTouristsGroup from './components/foreignTouristsGroup'
 
 function App() {
     return (
@@ -47,6 +48,11 @@ function App() {
                     exact
                     path={'/packages/:packageId'}
                     component={Package}
+                />
+                <Route
+                    exact
+                    path={'/holidays/Tours-for-Foreign-tourists'}
+                    component={ForeignTouristsGroup}
                 />
                 <Route
                     exact

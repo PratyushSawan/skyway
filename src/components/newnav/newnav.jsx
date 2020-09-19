@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import style from './newnav.module.css'
-import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 const NewNav = () => {
@@ -18,20 +17,19 @@ const NewNav = () => {
 
         <div className={style.newnav}>
             <div>
-
                 <b>Discover India Tours for Foreign tourist's visiting India</b>
                 {pkgs && pkgs.length ? pkgs.map((pkg, i) => {
-                    if (i < 7 && pkg.category[1].toLowerCase() === "Discover India Tours for Foreign tourists visiting India".toLowerCase()) {
-                        return (
+                    return (i < 7 && pkg.category[1].toLowerCase() === "Discover India Tours for Foreign tourists visiting India".toLowerCase()) ?
+                        (
                             <div key={pkg._id}>
                                 <a href={'/packages/' + pkg._id}>
                                     {pkg.packageName}
                                 </a>
                             </div>
                         )
-                    }
+                        : null
                 }) : <p>No Packages in This Group Yet!</p>}
-                <a href="/holidays/Discover-India-Tours-for-Foreign-tourists-visiting-India" style={{ color: 'blue' }}>See More</a>
+                <a href="/holidays/Tours-for-Foreign-tourists" style={{ color: 'blue' }}>See More</a>
                 <img src={require('../asserts/images/taj.png')} alt='' />
             </div>
             <div>
@@ -65,22 +63,22 @@ const NewNav = () => {
                 <span>
                     <b>International</b>
                     <div>
-                        <Link to='/holidays/International/Asia'>Asia</Link>
+                        <a href='/holidays/International/Asia'>Asia</a>
                     </div>
                     <div>
-                        <Link to='/holidays/International/Africa'>Africa</Link>
+                        <a href='/holidays/International/Africa'>Africa</a>
                     </div>
                     <div>
-                        <Link to='/holidays/International/Australia'>Australia</Link>
+                        <a href='/holidays/International/Australia'>Australia</a>
                     </div>
                     <div>
-                        <Link to='/holidays/International/Europe'>Europe</Link>
+                        <a href='/holidays/International/Europe'>Europe</a>
                     </div>
                     <div>
-                        <Link to='/holidays/International/North-and-south-america'>North and south america</Link>
+                        <a href='/holidays/International/North-and-south-america'>North and south america</a>
                     </div>
                     <div>
-                        <Link to='/holidays/International/Honeymoon-Packages'>Honeymoon Packages</Link>
+                        <a href='/holidays/International/Honeymoon-Packages'>Honeymoon Packages</a>
                     </div>
                 </span>
                 <img src={require('../asserts/images/menu3.png')} alt='' />
@@ -89,19 +87,19 @@ const NewNav = () => {
                 <span>
                     <b>Destination</b>
                     <div>
-                        <Link to='/holidays/Destination/Karnataka-Tours'>Karnataka Tours</Link>
+                        <a href='/holidays/Destination/Karnataka-Tours'>Karnataka Tours</a>
                     </div>
                     <div>
-                        <Link to='/holidays/Destination/Kerela-Tours'>Kerela Tours</Link>
+                        <a href='/holidays/Destination/Kerela-Tours'>Kerela Tours</a>
                     </div>
                     <div>
-                        <Link to='/holidays/Destination/Weekend-Gateways'>Weekend Gateways</Link>
+                        <a href='/holidays/Destination/Weekend-Gateways'>Weekend Gateways</a>
                     </div>
                     <div>
-                        <Link to='/holidays/Destination/City-Breaks'>City Breaks</Link>
+                        <a href='/holidays/Destination/City-Breaks'>City Breaks</a>
                     </div>
                     <div>
-                        <Link to='/holidays/Destination/Coach-Tours'>Coach Tours</Link>
+                        <a href='/holidays/Destination/Coach-Tours'>Coach Tours</a>
                     </div>
                 </span>
                 <img src={require('../asserts/images/menu5.png')} alt='' />

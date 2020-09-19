@@ -18,30 +18,23 @@ let BreadcrumComp = (props) => {
                     />
                     <span>{props.category}</span>
                 </Breadcrumb.Item>
-                <Breadcrumb.Item>
-                    <FaGlassCheers
-                        style={{
-                            position: 'relative',
-                            bottom: '2px',
-                            fontSize: '18pt',
-                            marginRight: '5px',
-                        }}
-                    />
+                {props.subcat1 ? < Breadcrumb.Item >
                     <span>{props.subcat1}</span>
-                </Breadcrumb.Item>
+                </Breadcrumb.Item> : null}
+
                 <Breadcrumb.Item>
-                    <FaTripadvisor
+                    {/* <FaTripadvisor
                         style={{
                             position: 'relative',
                             bottom: '2px',
                             fontSize: '18pt',
                             marginRight: '5px',
                         }}
-                    />
+                    /> */}
                     <span>{props.tourName}</span>
                 </Breadcrumb.Item>
             </Breadcrumb>
-        </div>
+        </div >
     )
 }
 

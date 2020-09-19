@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaClock, FaArrowRight } from 'react-icons/fa'
 import ReactHtmlParser from 'react-html-parser';
-import searchStyle from './jungle.module.css'
+import searchStyle from './styles.css'
 
 let CustomCard = ({ pkgs, tourName }) => {
     const costStartsAt = (pricing) => {
