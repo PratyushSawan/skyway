@@ -126,6 +126,9 @@ const NewNav = () => {
                         <a href='/holidays/International/Australia'>Australia</a>
                     </div>
                     <div className="pb-2">
+                        <a href='/holidays/International/Australia-and-New-zealand'>Australia & New Zealand</a>
+                    </div>
+                    <div className="pb-2">
                         <a href='/holidays/International/Europe'>Europe</a>
                     </div>
                     <div className="pb-2">
@@ -144,7 +147,7 @@ const NewNav = () => {
                         <a href='/holidays/Destination/Karnataka-Tours'>Karnataka Tours</a>
                     </div>
                     <div>
-                        <a href='/holidays/Destination/Kerela-Tours'>Kerela Tours</a>
+                        <a href='/holidays/Destination/Kerala-Tours'>Kerala Tours</a>
                     </div>
                     <div>
                         <a href='/holidays/Destination/Weekend-Gateways'>Weekend Gateways</a>
