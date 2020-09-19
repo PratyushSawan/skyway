@@ -35,3 +35,21 @@
     color: black;
     padding: 2px;
 }
+
+.accordion {
+    padding-left: 3px;
+    background-color: #eeeeee00;
+    cursor: pointer;
+    border: none;
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+}
+
+.accordion::active {
+    background: #ccc;
+}
+
+.panel {
+    max-height: 100% !important;
+}
