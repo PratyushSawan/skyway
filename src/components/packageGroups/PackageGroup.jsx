@@ -17,6 +17,8 @@ let PackageGroup = () => {
     let { groupId, category } = useParams()
     let history = useHistory();
 
+    console.log(groupId);
+
     history.listen((location) => {
         setLoading(true)
         setFound(false)
@@ -30,7 +32,7 @@ let PackageGroup = () => {
             let temppkgs = [];
             allpkgs.forEach((pkg) => {
                 if (pkg.category[0].toLowerCase() === "holidays"
-                    && pkg.category[2].toLowerCase() === groupId.toLowerCase()) {
+                    && pkg.category[2].toLowerCase() === groupId.replace('-', ' ').toLowerCase()) {
                     setFound(true)
                     temppkgs.push(pkg);
                 }
