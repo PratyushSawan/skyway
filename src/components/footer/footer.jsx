@@ -5,7 +5,7 @@ import footerStyle from './footer.module.css'
 let FooterLink = (props) => {
     return (
         <div className={footerStyle.foot_link}>
-            {/* <Link to={props.to}>{props.text}</Link> */}
+            {<Link to={props.to}>{props.text}</Link>}
         </div>
     )
 }
