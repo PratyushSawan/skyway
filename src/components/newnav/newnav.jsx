@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import style from './newnav.module.css'
 import axios from 'axios'
+import { FaAngleDoubleDown } from 'react-icons/fa'
 
 const NewNav = () => {
 
@@ -85,7 +86,7 @@ const NewNav = () => {
                     <div className="pb-2" onClick={() => {
                         slideAccordion(1)
                     }}>
-                        <button className={style.accordion}>Asia</button>
+                        <button className={style.accordion}>Asia <FaAngleDoubleDown /></button>
                         <div className={accordionPanelClass1} style={{
                             maxHeight: 0,
                             paddingLeft: "10px",
@@ -109,16 +110,16 @@ const NewNav = () => {
                     <div className="pb-2" onClick={() => {
                         slideAccordion(2)
                     }}>
-                        <button className={style.accordion}>Africa</button>
+                        <button className={style.accordion}>Africa <FaAngleDoubleDown /></button>
                         <div className={accordionPanelClass2} style={{
                             maxHeight: 0,
                             paddingLeft: "10px",
                             overflow: "hidden",
                             transition: 'max-height 0.2s ease-out'
                         }}>
-                            <a className="pb-2" href='/holidays/International/Australia'>Kenya</a>
-                            <a className="pb-2" href='/holidays/International/Australia'>Mauritius</a>
-                            <a className="pb-2" href='/holidays/International/Australia'>South Africa</a>
+                            <a className="pb-2" href='/holidays/International/Kenya'>Kenya</a>
+                            <a className="pb-2" href='/holidays/International/Mauritius'>Mauritius</a>
+                            <a className="pb-2" href='/holidays/International/South-Africa'>South Africa</a>
                         </div>
                     </div>
                     <div className="pb-2">

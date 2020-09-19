@@ -51,5 +51,6 @@
 }
 
 .panel {
+    background: #e7e7e7;
     max-height: 100% !important;
 }
