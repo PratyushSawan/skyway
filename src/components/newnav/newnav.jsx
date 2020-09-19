@@ -7,7 +7,7 @@ const NewNav = () => {
 
     const [pkgs, setpkgs] = useState([])
     async function packagesList() {
-        const data = await axios.get("http://localhost:4545/api/v1/packages/getAllPackages")
+        const data = await axios.get("https://skyway-server.herokuapp.com//api/v1/packages/getAllPackages")
         setpkgs(data.data)
     }
     useEffect(() => {
@@ -37,27 +37,27 @@ const NewNav = () => {
             <div>
                 <b>India Tours for indian tourists to travel within India</b>
                 <div>
-                    <Link to={'/'}>Central India</Link>
+                    <a href={"/holidays/travel-within-india/Central-India"}>Central India</a>
                 </div>
                 <div>
-                    <Link to={'/'}>East India</Link>
+                    <a href={'/holidays/travel-within-india/East-India'}> a East India</a>
                 </div>
                 <div>
-                    <Link to={'/'}>North India</Link>
+                    <a href={'/holidays/travel-within-india/North-India'}>North India</a>
                 </div>
                 <div>
-                    <Link to={'/'}>South India</Link>
+                    <a href={'/holidays/travel-within-india/South-India'}>South India</a>
                 </div>
                 <div>
-                    <Link to={'/'}>West India</Link>
+                    <a href={'/holidays/travel-within-india/West-India'}>West India</a>
                 </div>
 
                 <b>Honeymoon Packages</b>
                 <div>
-                    <Link to={'/'}>India</Link>
+                    <a href={'/holidays/Honeymoon-Packages/India'}>India</a>
                 </div>
                 <div>
-                    <Link to={'/'}>Internaional</Link>
+                    <a href={'/holidays/Honeymoon-Packages/International'}>International</a>
                 </div>
                 <img src={require('../asserts/images/menu2.png')} alt='' />
             </div>
@@ -65,10 +65,10 @@ const NewNav = () => {
                 <span>
                     <b>International</b>
                     <div>
-                        <Link to='/'>Australia</Link>
+                        <Link to='/holidays/Honeymoon-Packages/Australia'>Australia</Link>
                     </div>
                     <div>
-                        <Link to='/'>Europe</Link>
+                        <Link to='/holidays/Honeymoon-Packages/Europe'>Europe</Link>
                     </div>
                     <div>
                         <Link to='/'>North and south america</Link>
@@ -100,7 +100,7 @@ const NewNav = () => {
                 </span>
                 <img src={require('../asserts/images/menu5.png')} alt='' />
             </div>
-        </div>
+        </div >
     )
 }
 

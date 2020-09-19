@@ -1,6 +1,6 @@
 import React from 'react'
 import { Breadcrumb } from 'antd'
-import { FaHome, FaTripadvisor } from 'react-icons/fa'
+import { FaHome, FaTripadvisor, FaGlassCheers } from 'react-icons/fa'
 import breadCrumStyle from './breadcrum.module.css'
 
 let BreadcrumComp = (props) => {
@@ -17,6 +17,17 @@ let BreadcrumComp = (props) => {
                         }}
                     />
                     <span>{props.category}</span>
+                </Breadcrumb.Item>
+                <Breadcrumb.Item>
+                    <FaGlassCheers
+                        style={{
+                            position: 'relative',
+                            bottom: '2px',
+                            fontSize: '18pt',
+                            marginRight: '5px',
+                        }}
+                    />
+                    <span>{props.subcat1}</span>
                 </Breadcrumb.Item>
                 <Breadcrumb.Item>
                     <FaTripadvisor
