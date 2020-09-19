@@ -7,7 +7,7 @@ const NewNav = () => {
 
     const [pkgs, setpkgs] = useState([])
     async function packagesList() {
-        const data = await axios.get("https://skyway-server.herokuapp.com//api/v1/packages/getAllPackages")
+        const data = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
         setpkgs(data.data)
     }
     useEffect(() => {
@@ -83,19 +83,19 @@ const NewNav = () => {
                 <span>
                     <b>Destination</b>
                     <div>
-                        <Link to='/'>Karnataka Tours</Link>
+                        <Link to='/holidays/Destination/Karnataka-Tours'>Karnataka Tours</Link>
                     </div>
                     <div>
-                        <Link to='/'>Kerela Tours</Link>
+                        <Link to='/holidays/Destination/Kerela-Tours'>Kerela Tours</Link>
                     </div>
                     <div>
-                        <Link to='/'>Weekend Gateways</Link>
+                        <Link to='/holidays/Destination/Weekend-Gateways'>Weekend Gateways</Link>
                     </div>
                     <div>
-                        <Link to='/'>City Breaks</Link>
+                        <Link to='/holidays/Destination/City-Breaks'>City Breaks</Link>
                     </div>
                     <div>
-                        <Link to='/'>Coach Tours</Link>
+                        <Link to='/holidays/Destination/Coach-Tours'>Coach Tours</Link>
                     </div>
                 </span>
                 <img src={require('../asserts/images/menu5.png')} alt='' />

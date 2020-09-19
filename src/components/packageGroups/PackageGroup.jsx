@@ -24,7 +24,7 @@ let PackageGroup = () => {
     })
 
     async function packagesList() {
-        const data = await axios.get("https://skyway-server.herokuapp.com//api/v1/packages/getAllPackages")
+        const data = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
         if (data.data && data.data.length) {
             let allpkgs = data.data;
             let temppkgs = [];

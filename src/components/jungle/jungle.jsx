@@ -9,7 +9,7 @@ import CustomCard from "./CustomCard"
 let Jungle = () => {
     const [pkgs, setpkgs] = useState([])
     async function packagesList() {
-        const Res = await axios.get("https://skyway-server.herokuapp.com//api/v1/packages/getAllPackages")
+        const Res = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
         setpkgs(Res.data.filter((pkg) => {
             return ((pkg.category[0].toUpperCase() === "JUNGLE LODGES") ? pkg : null)
         }))

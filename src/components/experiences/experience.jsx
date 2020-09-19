@@ -11,7 +11,7 @@ let Experience = ({ tourName }) => {
 
     const [pkgs, setpkgs] = useState([])
     async function packagesList() {
-        const data = await axios.get("https://skyway-server.herokuapp.com//api/v1/packages/getAllPackages")
+        const data = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
         setpkgs(data.data)
     }
 
