@@ -125,9 +125,6 @@ const NewNav = () => {
                         </div>
                     </div>
                     <div className="pb-2">
-                        <a href='/holidays/International/Australia'>Australia</a>
-                    </div>
-                    <div className="pb-2">
                         <a href='/holidays/International/Australia-and-New-zealand'>Australia & New Zealand</a>
                     </div>
                     <div className="pb-2">
