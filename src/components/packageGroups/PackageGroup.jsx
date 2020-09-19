@@ -14,45 +14,76 @@ let PackageGroup = () => {
     const [loading, setLoading] = useState(true)
     const [found, setFound] = useState(false)
 
-    let { groupId, category } = useParams()
-    groupId = groupId.replace(/-/g, ' ')
-    category = category.replace(/-/g, ' ')
+    let { groupId, category, subgroup } = useParams()
+    groupId = groupId ? groupId.replace(/-/g, ' ') : null;
+    category = category ? category.replace(/-/g, ' ') : null;
+    subgroup = subgroup ? subgroup.replace(/-/g, ' ') : null;
     let history = useHistory();
 
-    history.listen((location) => {
+    history.listen(() => {
         setLoading(true)
         setFound(false)
         setpkgs([])
     })
 
     async function packagesList() {
-        const data = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
-        if (data.data && data.data.length) {
-            let allpkgs = data.data;
-            let temppkgs = [];
-            allpkgs.forEach((pkg) => {
-                if (pkg.category[0].toLowerCase() === "holidays"
-                    && pkg.category[2].toLowerCase() === groupId.toLowerCase()) {
-                    setFound(true)
-                    temppkgs.push(pkg);
+        if (["asia", "africa"].includes(groupId.toLowerCase()) && !subgroup) {
+            setFound(false);
+            setTimeout(() => {
+                setLoading(false);
+            }, 750);
+        }
+        else if (category && subgroup) {
+            console.log("entereed---------------");
+            const data = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
+            if (data.data && data.data.length) {
+                let allpkgs = data.data;
+                let temppkgs = [];
+                allpkgs.forEach((pkg) => {
+                    if (pkg.category[3].toLowerCase() === subgroup.toLowerCase()) {
+                        setFound(true)
+                        temppkgs.push(pkg);
+                    }
+                })
+                if (temppkgs.length) {
+                    setpkgs(temppkgs);
+                    setFound(true);
+                    setLoading(false)
                 }
-            })
-            if (temppkgs.length) {
-                setpkgs(temppkgs);
-                setFound(true);
-                setLoading(false)
+                else {
+                    setFound(false)
+                    setpkgs([])
+                    setLoading(false)
+                }
             }
-            else {
-                setFound(false)
-                setpkgs([])
-                setLoading(false)
+        } else {
+            const data = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
+            if (data.data && data.data.length) {
+                let allpkgs = data.data;
+                let temppkgs = [];
+                allpkgs.forEach((pkg) => {
+                    if (pkg.category[0].toLowerCase() === "holidays"
+                        && pkg.category[2].toLowerCase() === groupId.toLowerCase()) {
+                        setFound(true)
+                        temppkgs.push(pkg);
+                    }
+                })
+                if (temppkgs.length) {
+                    setpkgs(temppkgs);
+                    setFound(true);
+                    setLoading(false)
+                }
+                else {
+                    setFound(false)
+                    setpkgs([])
+                    setLoading(false)
+                }
             }
         }
-
     }
 
     useEffect(() => {
-        console.log("--top", pkgs);
+        console.log(pkgs, category, groupId, subgroup);
         packagesList()
         if (found && pkgs) {
             setBannerIMG(pkgs[0].imageUrl)
@@ -80,10 +111,10 @@ let PackageGroup = () => {
                                 image={
                                     bannerIMG
                                 }
-                                name={groupId.toUpperCase() + " TOURS"}
+                                name={subgroup ? subgroup.toUpperCase() + " TOURS" : groupId.toUpperCase() + " TOURS"}
                             /> : null}
 
-                        <BreadcrumComp category="HOLIDAY" tourName={groupId.toUpperCase()} />
+                        <BreadcrumComp category="HOLIDAY" tourName={subgroup ? subgroup.toUpperCase() : groupId.toUpperCase()} />
                         <div className='container'>
                             <p style={{ padding: '20px', fontSize: '14pt' }}>
                                 The promoters of the property are the Govt. Of Karnataka
@@ -165,7 +196,7 @@ let PackageGroup = () => {
                                 </div>
                                     </div>
                                     {pkgs && pkgs.length ?
-                                        <CustomCard pkgs={pkgs} category={category} group={groupId} /> : null
+                                        <CustomCard subgroup={subgroup} pkgs={pkgs} category={category} group={groupId} /> : null
                                     }
                                     <br />
 
@@ -176,8 +207,8 @@ let PackageGroup = () => {
 
                     :
                     <div className="text-center py-5 my-5">
-                        <h1 className="text-danger">NO PACKAGES FOUND IN:</h1>
-                        <h3 className='text-info'>{category} - {groupId}</h3>
+                        <h1 className="text-danger">NO PACKAGES FOUND HERE</h1>
+                        {/* <h3 className='text-info'>{category} - {groupId}</h3> */}
                     </div>
             }
 

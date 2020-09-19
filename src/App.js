@@ -59,6 +59,11 @@ function App() {
                     path={'/holidays/:category/:groupId'}
                     component={PackageGroup}
                 />
+                <Route
+                    exact
+                    path={'/holidays/:category/:groupId/:subgroup'}
+                    component={PackageGroup}
+                />
                 <Route exact path={'/search'} component={Search} />
                 <Route exact path={'/experiences'} render={(props) => <Experiences {...props} tourName={``} />} /> />
                 <Route exact path={'/payOnline'} component={PayOnline} />

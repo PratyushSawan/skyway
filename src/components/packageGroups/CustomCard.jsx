@@ -2,8 +2,7 @@ import React from 'react'
 import searchStyle from './style.css'
 import { FaClock, FaArrowRight } from 'react-icons/fa'
 
-let CustomCard = ({ pkgs, group, category }) => {
-    console.log(pkgs, group, category);
+let CustomCard = ({ pkgs, group, category, subgroup }) => {
     const costStartsAt = (pricing) => {
         let prices = [];
 
@@ -17,9 +16,16 @@ let CustomCard = ({ pkgs, group, category }) => {
 
         return minPrice;
     }
-    pkgs = pkgs.map((pkg) => {
-        return (pkg.category[2].toLowerCase() === group.toLowerCase() ? pkg : null)
-    })
+    if (subgroup) {
+        pkgs = pkgs.map((pkg) => {
+            return (pkg.category[3].toLowerCase() === subgroup.toLowerCase() ? pkg : null)
+        })
+    } else {
+        pkgs = pkgs.map((pkg) => {
+            return (pkg.category[2].toLowerCase() === group.toLowerCase() ? pkg : null)
+        })
+    }
+
 
     let pkgCards = pkgs.map((pkg, i) => {
 

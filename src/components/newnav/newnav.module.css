@@ -43,7 +43,7 @@
     border: none;
     text-align: left;
     outline: none;
-    transition: 0.4s;
+    transition: 0s;
 }
 
 .accordion::active {
