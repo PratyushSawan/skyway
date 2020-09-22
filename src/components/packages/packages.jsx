@@ -483,6 +483,12 @@ let Packages = () => {
                                     </Table>
                                 </div>
                             </div>
+                            <div >
+                                <div id='terms' style={{ padding: '20px' }}>
+                                    <h2>TERMS & CONDITIONS</h2>
+                                    <p>We strongly recommend that you read the <b> <a href='/termsandcondition'> Terms & Conditions </a> </b> carefully before booking your holiday.</p>
+                                </div>
+                            </div>
                             <div id={'section_7'}>
                                 <div id='description' style={{ padding: '20px' }}>
                                     <h2>Description</h2>
