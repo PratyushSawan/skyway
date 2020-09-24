@@ -4,14 +4,24 @@ import ReactHtmlParser from 'react-html-parser';
 import searchStyle from './jungle.module.css'
 
 let CustomCard = ({ pkgs, tourName }) => {
-    const costStartsAt = (pricing) => {
+    const costStartsAt = (packageDetails) => {
         let prices = [];
 
-        pricing.forEach(price => {
-            if (price.cost.standard !== 0) {
-                prices.push(price.cost.standard)
-            }
-        });
+        if (packageDetails.category[0] === "JUNGLE LODGES") {
+            packageDetails.pricing.forEach(price => {
+                if (price.cost.singleOcc.weekday != 0) {
+                    prices.push(price.cost.singleOcc.weekday)
+                }
+            });
+        }
+        else {
+            packageDetails.pricing.forEach(price => {
+                if (price.cost.standard != 0) {
+                    prices.push(price.cost.standard)
+                }
+            });
+
+        }
 
         let minPrice = Math.min(...prices)
 
@@ -36,7 +46,7 @@ let CustomCard = ({ pkgs, tourName }) => {
                         </div>
                         <div className={searchStyle.places}>{pkg.place}</div>
                         <div style={{ float: 'left' }}>
-                            Starts at: <b>₹ {costStartsAt(pkg.pricing)} </b>
+                            Starts at: <b>₹ {costStartsAt(pkg)} </b>
                         </div>
                     </div>
                     <a href={"/packages/" + pkg._id}>

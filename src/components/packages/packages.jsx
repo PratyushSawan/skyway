@@ -95,11 +95,21 @@ let Packages = () => {
     function pricingAt() {
         let prices = [];
 
-        packageDetails.pricing.forEach(price => {
-            if (price.cost.standard != 0) {
-                prices.push(price.cost.standard)
-            }
-        });
+        if (packageDetails.category[0] === "JUNGLE LODGES") {
+            packageDetails.pricing.forEach(price => {
+                if (price.cost.singleOcc.weekday != 0) {
+                    prices.push(price.cost.singleOcc.weekday)
+                }
+            });
+        }
+        else {
+            packageDetails.pricing.forEach(price => {
+                if (price.cost.standard != 0) {
+                    prices.push(price.cost.standard)
+                }
+            });
+
+        }
 
         let minPrice = Math.min(...prices)
 
@@ -288,71 +298,145 @@ let Packages = () => {
                                     style={{ padding: '20px', width: '100%' }}
                                 >
                                     <h2>Pricing</h2>
-                                    <Table striped bordered hover>
-                                        <thead>
-                                            <th>No of guests</th>
-                                            <th>Standard</th>
-                                            <th>Deluxe</th>
-                                            <th>Luxury</th>
-                                        </thead>
-                                        <tbody>
-                                            {packageDetails.pricing ? (
-                                                packageDetails.pricing.map(
-                                                    (plan) => {
-                                                        return (
-                                                            <tr>
-                                                                <td>{plan.name}</td>
-                                                                <td>
-                                                                    {plan.cost
-                                                                        .standard !=
-                                                                        0 ? (
-                                                                            <>₹</>
-                                                                        ) : null}
-                                                                    {plan.cost
-                                                                        .standard !=
-                                                                        0 ?
-                                                                        plan.cost
-                                                                            .standard :
-                                                                        "Free"
-                                                                    }
-                                                                </td>
-                                                                <td>
-                                                                    {plan.cost
-                                                                        .deluxe !=
-                                                                        0 ? (
-                                                                            <>₹</>
-                                                                        ) : null}
-                                                                    {plan.cost
-                                                                        .deluxe !=
-                                                                        0 ?
-                                                                        plan.cost
-                                                                            .deluxe :
-                                                                        "Free"
-                                                                    }
-                                                                </td>
-                                                                <td>
-                                                                    {plan.cost
-                                                                        .luxury !=
-                                                                        0 ? (
-                                                                            <>₹</>
-                                                                        ) : null}
-                                                                    {plan.cost
-                                                                        .luxury !=
-                                                                        0 ?
-                                                                        plan.cost
-                                                                            .luxury :
-                                                                        "Free"
-                                                                    }
-                                                                </td>
-                                                            </tr>
+                                    {packageDetails.category[0] === 'JUNGLE LODGES' ?
+                                        <div>
+                                            <Table striped bordered hover>
+                                                <thead>
+                                                    <tr>
+                                                        <th rowSpan="2"> Package Name </th>
+                                                        <th colSpan="2">Single Occupancy </th>
+                                                        <th colSpan="2"> Double Occupancy</th>
+                                                        <th rowSpan="2"> Seasonal </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            Weekday
+                                            </th>
+                                                        <th>
+                                                            Weekend
+                                            </th>
+                                                        <th>
+                                                            Weekday
+                                            </th>
+                                                        <th>
+                                                            Weekend
+                                            </th>
+                                                    </tr>
+
+                                                </thead>
+                                                <tbody>
+                                                    {packageDetails.pricing ? (
+                                                        packageDetails.pricing.map(
+                                                            (plan) => {
+                                                                return (
+                                                                    <tr>
+                                                                        <td>
+                                                                            {plan.name}
+                                                                        </td>
+                                                                        <td>
+                                                                            {plan.cost.singleOcc.weekday}
+                                                                        </td>
+                                                                        <td>
+                                                                            {plan.cost.singleOcc.weekend}
+                                                                        </td>
+                                                                        <td>
+                                                                            {plan.cost.doubleOcc.weekday}
+                                                                        </td>
+                                                                        <td>
+                                                                            {plan.cost.doubleOcc.weekend}
+                                                                        </td>
+                                                                        <td>
+                                                                            {plan.cost.seasonal}
+                                                                        </td>
+                                                                    </tr>
+                                                                )
+                                                            }
                                                         )
-                                                    }
-                                                )
-                                            ) : (
-                                                    <></>
-                                                )}
-                                        </tbody>
-                                    </Table>
+                                                    ) : (
+                                                            <></>
+                                                        )}
+                                                </tbody>
+                                            </Table>
+                                            <br />
+                                            <ul>
+                                                <li>Children 5 to 12 years sharing parents room with extra bed - 50% of adult Tariff
+</li>
+                                                <li>Children below 5 years sharing parents room without extra bed - Free
+</li>
+                                                <li><b>Weekday( Sunday to Thursday) & weekend( Friday & Saturday)
+</b></li>
+                                                <li><b>21st to 31st December Supplement charges will be applicable. Kindly check with us for rates
+</b></li>
+                                            </ul>
+                                        </div>
+
+                                        :
+                                        <Table striped bordered hover>
+                                            <thead>
+                                                <th>No of guests</th>
+                                                <th>Standard</th>
+                                                <th>Deluxe</th>
+                                                <th>Luxury</th>
+                                            </thead>
+                                            <tbody>
+                                                {packageDetails.pricing ? (
+                                                    packageDetails.pricing.map(
+                                                        (plan) => {
+                                                            return (
+                                                                <tr>
+                                                                    <td>{plan.name}</td>
+                                                                    <td>
+                                                                        {plan.cost
+                                                                            .standard !=
+                                                                            0 ? (
+                                                                                <>₹</>
+                                                                            ) : null}
+                                                                        {plan.cost
+                                                                            .standard !=
+                                                                            0 ?
+                                                                            plan.cost
+                                                                                .standard :
+                                                                            "Free"
+                                                                        }
+                                                                    </td>
+                                                                    <td>
+                                                                        {plan.cost
+                                                                            .deluxe !=
+                                                                            0 ? (
+                                                                                <>₹</>
+                                                                            ) : null}
+                                                                        {plan.cost
+                                                                            .deluxe !=
+                                                                            0 ?
+                                                                            plan.cost
+                                                                                .deluxe :
+                                                                            "Free"
+                                                                        }
+                                                                    </td>
+                                                                    <td>
+                                                                        {plan.cost
+                                                                            .luxury !=
+                                                                            0 ? (
+                                                                                <>₹</>
+                                                                            ) : null}
+                                                                        {plan.cost
+                                                                            .luxury !=
+                                                                            0 ?
+                                                                            plan.cost
+                                                                                .luxury :
+                                                                            "Free"
+                                                                        }
+                                                                    </td>
+                                                                </tr>
+                                                            )
+                                                        }
+                                                    )
+                                                ) : (
+                                                        <></>
+                                                    )}
+                                            </tbody>
+                                        </Table>
+                                    }
                                 </div>
                             </div>
                             <div id={'section_4'}>
