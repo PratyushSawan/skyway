@@ -116,6 +116,35 @@ let Packages = () => {
         return minPrice;
     }
 
+    let hasCost = (pricing, cost) => {
+        if (pricing && pricing.length) {
+            if (cost === "deluxe") {
+                let deluxe = []
+                pricing.forEach((price) => {
+                    deluxe.push(price.cost.deCost);
+                })
+                if (deluxe.every((x) => !x)) {
+                    return false
+                } else {
+                    return true
+                }
+            } else if (cost === "luxury") {
+                let luxury = []
+                pricing.forEach((price) => {
+                    luxury.push(price.cost.luCost);
+                })
+                if (luxury.every((x) => !x)) {
+                    return false
+                } else {
+                    return true
+                }
+            }
+        }
+        else {
+            return false
+        }
+    }
+
     return packageDetails.length === 0 ? (
         LoadingJSX
     ) : (
@@ -375,8 +404,12 @@ let Packages = () => {
                                             <thead>
                                                 <th>No of guests</th>
                                                 <th>Standard</th>
-                                                <th>Deluxe</th>
-                                                <th>Luxury</th>
+                                                {hasCost(packageDetails.pricing, "deluxe") ?
+                                                    <th>Deluxe</th>
+                                                    : null}
+                                                {hasCost(packageDetails.pricing, "luxury") ?
+                                                    <th>Luxury</th>
+                                                    : null}
                                             </thead>
                                             <tbody>
                                                 {packageDetails.pricing ? (
@@ -399,34 +432,39 @@ let Packages = () => {
                                                                             "Free"
                                                                         }
                                                                     </td>
-                                                                    <td>
-                                                                        {plan.cost
-                                                                            .deluxe !=
-                                                                            0 ? (
-                                                                                <>₹</>
-                                                                            ) : null}
-                                                                        {plan.cost
-                                                                            .deluxe !=
-                                                                            0 ?
-                                                                            plan.cost
-                                                                                .deluxe :
-                                                                            "Free"
-                                                                        }
-                                                                    </td>
-                                                                    <td>
-                                                                        {plan.cost
-                                                                            .luxury !=
-                                                                            0 ? (
-                                                                                <>₹</>
-                                                                            ) : null}
-                                                                        {plan.cost
-                                                                            .luxury !=
-                                                                            0 ?
-                                                                            plan.cost
-                                                                                .luxury :
-                                                                            "Free"
-                                                                        }
-                                                                    </td>
+                                                                    {hasCost(packageDetails.pricing, "deluxe") ?
+                                                                        <td>
+                                                                            {plan.cost
+                                                                                .deluxe !=
+                                                                                0 ? (
+                                                                                    <>₹</>
+                                                                                ) : null}
+                                                                            {plan.cost
+                                                                                .deluxe !=
+                                                                                0 ?
+                                                                                plan.cost
+                                                                                    .deluxe :
+                                                                                "Free"
+                                                                            }
+                                                                        </td>
+
+                                                                        : null}
+                                                                    {hasCost(packageDetails.pricing, "luxury") ?
+                                                                        <td>
+                                                                            {plan.cost
+                                                                                .luxury !=
+                                                                                0 ? (
+                                                                                    <>₹</>
+                                                                                ) : null}
+                                                                            {plan.cost
+                                                                                .luxury !=
+                                                                                0 ?
+                                                                                plan.cost
+                                                                                    .luxury :
+                                                                                "Free"
+                                                                            }
+                                                                        </td>
+                                                                        : null}
                                                                 </tr>
                                                             )
                                                         }
