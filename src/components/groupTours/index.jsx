@@ -11,7 +11,7 @@ let GroupTour = ({ tourName }) => {
     const LOADER = <div className='text-center align-content-center justify-content-center'><img width="500px" src={require("./loader.gif")} alt="" srcSet="" /></div>
 
     async function packagesList() {
-        const Res = await axios.get("http://localhost:4545/api/v1/packages/getAllPackages")
+        const Res = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
         setpkgs(Res.data.filter((pkg) => {
             return ((pkg.category[0].toUpperCase() === "GROUP TOURS" && tourName.toUpperCase() === pkg.category[1].toUpperCase()) ? pkg : null)
         }))
