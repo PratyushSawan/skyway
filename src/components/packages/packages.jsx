@@ -87,7 +87,6 @@ let Packages = () => {
             .then((data) => {
                 setPackageDetails(data)
             })
-
         //scrollFix
         makeSidebarSticky()
     }, [packageId])
@@ -151,12 +150,13 @@ let Packages = () => {
             <div className={style.package}>
                 <div>
                     <Banner
+                        // heading={packageDetails.packageName}
                         image={packageDetails.imageUrl}
                         duration={packageDetails.duration}
                         places={packageDetails.place}
                         pricingAt={pricingAt()}
                     />
-                    <BreadcrumComp />
+                    <BreadcrumComp category={packageDetails.category[0]} tourName={packageDetails.packageName} />
                     <div className='row'>
                         <div
                             style={{
