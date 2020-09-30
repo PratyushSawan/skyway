@@ -25,12 +25,14 @@ import EmailSub from '../emailsub/emailsub'
 import Brands from '../brands/brands'
 import Lightbox from 'react-image-lightbox'
 import 'react-image-lightbox/style.css'
+import { Helmet } from "react-helmet";
 
 const { Step } = Steps
 
 let Packages = () => {
     let [packageDetails, setPackageDetails] = useState([])
     let { packageId } = useParams()
+    const [metatags, setMetatags] = useState("")
 
     let [photoIndex, setPhotoIndex] = useState(0)
     let [isOpen, setIsOpen] = useState(false)
@@ -79,17 +81,27 @@ let Packages = () => {
     }
 
     useEffect(() => {
+        console.log(packageId);
         //Fetching the packages
-        fetch(`https://skyway-server.herokuapp.com/api/v1/packages/getPackage/${packageId}`)
+        fetch(`http://localhost:4545/api/v1/packages/getPackage/${packageId}`)
             .then((res) => {
                 return res.json()
             })
             .then((data) => {
                 setPackageDetails(data)
+                fetch(`http://localhost:4545/api/v1/packages/getMetaData/${data.packageName}`).then((result) => {
+                    return result.json()
+                }).then((metadata) => {
+                    setMetatags(metadata.meta_keywords)
+                }).catch((err) => {
+                    console.log(err)
+                });
             })
         //scrollFix
         makeSidebarSticky()
     }, [packageId])
+
+
 
     function pricingAt() {
         let prices = [];
@@ -147,7 +159,12 @@ let Packages = () => {
     return packageDetails.length === 0 ? (
         LoadingJSX
     ) : (
+
             <div className={style.package}>
+                <Helmet>
+                    <title>{packageDetails ? packageDetails.packageName.toLowerCase() : "Skyway"}</title>
+                    <meta name="keywords" content={metatags} />
+                </Helmet>
                 <div>
                     <Banner
                         // heading={packageDetails.packageName}
@@ -299,7 +316,7 @@ let Packages = () => {
                                             packageDetails.galleryImagesUrls.map(
                                                 (url, idx) => {
                                                     return (
-                                                        <div className={'col'}>
+                                                        <div className={'col'} key={'image' + idx}>
                                                             <img
                                                                 onClick={() => {
                                                                     setPhotoIndex(
@@ -402,21 +419,23 @@ let Packages = () => {
                                         :
                                         <Table striped bordered hover>
                                             <thead>
-                                                <th>No of guests</th>
-                                                <th>Standard</th>
-                                                {hasCost(packageDetails.pricing, "deluxe") ?
-                                                    <th>Deluxe</th>
-                                                    : null}
-                                                {hasCost(packageDetails.pricing, "luxury") ?
-                                                    <th>Luxury</th>
-                                                    : null}
+                                                <tr>
+                                                    <th>No of guests</th>
+                                                    <th>Standard</th>
+                                                    {hasCost(packageDetails.pricing, "deluxe") ?
+                                                        <th>Deluxe</th>
+                                                        : null}
+                                                    {hasCost(packageDetails.pricing, "luxury") ?
+                                                        <th>Luxury</th>
+                                                        : null}
+                                                </tr>
                                             </thead>
                                             <tbody>
                                                 {packageDetails.pricing ? (
                                                     packageDetails.pricing.map(
-                                                        (plan) => {
+                                                        (plan, idx) => {
                                                             return (
-                                                                <tr>
+                                                                <tr key={"plan" + idx}>
                                                                     <td>{plan.name}</td>
                                                                     <td>
                                                                         {plan.cost
@@ -487,8 +506,8 @@ let Packages = () => {
                                     <ul className={'container'}>
                                         {packageDetails.includeExclude ? (
                                             packageDetails.includeExclude.include.map(
-                                                (include) => {
-                                                    return <li>{include}</li>
+                                                (include, i) => {
+                                                    return <li key={"include" + i}>{include}</li>
                                                 }
                                             )
                                         ) : (
@@ -499,8 +518,8 @@ let Packages = () => {
                                     <ul className={'container'}>
                                         {packageDetails.includeExclude ? (
                                             packageDetails.includeExclude.exclude.map(
-                                                (exclude) => {
-                                                    return <li>{exclude}</li>
+                                                (exclude, i) => {
+                                                    return <li key={"exlude" + i}> {exclude}</li>
                                                 }
                                             )
                                         ) : (
@@ -538,10 +557,12 @@ let Packages = () => {
                                     <h2>Hotels</h2>
                                     <Table striped bordered hover>
                                         <thead>
-                                            <th>Place</th>
-                                            <th>Standard</th>
-                                            <th>Deluxe</th>
-                                            <th>Luxury</th>
+                                            <tr>
+                                                <th>Place</th>
+                                                <th>Standard</th>
+                                                <th>Deluxe</th>
+                                                <th>Luxury</th>
+                                            </tr>
                                         </thead>
                                         <tbody>
                                             {packageDetails.hotels ? (
@@ -648,7 +669,7 @@ let Packages = () => {
                         Book Now <FaArrowRight />
                     </div>
                 </div>
-            </div>
+            </div >
         )
 }
 

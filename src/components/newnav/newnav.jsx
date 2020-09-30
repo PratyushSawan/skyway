@@ -26,13 +26,19 @@ const NewNav = () => {
 
 
     const [pkgs, setpkgs] = useState([])
-    async function packagesList() {
-        const data = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
-        setpkgs(data.data)
+    function packagesList() {
+        axios.get("http://localhost:4545/api/v1/packages/getAllPackages").then((res) => {
+            setpkgs(res.data)
+
+        }).catch((err) => {
+            console.log(err);
+        });
     }
+
     useEffect(() => {
+        console.log("newnav");
         packagesList();
-    }, [pkgs])
+    }, [])
 
     let [indiapkgs, setindiapkgs] = useState(0)
 
@@ -42,10 +48,12 @@ const NewNav = () => {
             <div>
                 <b>Discover India Tours for Foreign tourist's visiting India</b>
                 {pkgs && pkgs.length ? pkgs.map((pkg, i) => {
+                    let pkgId = pkg.category[0].replace(/ /g, '-') + '--' + pkg.category[1].replace(/ /g, '-') + (pkg.category[2] ? '--' + pkg.category[2] : '') + (pkg.category[3] ? '--' + pkg.category[3] : '') + '--' + pkg.packageName.replace(/ /g, '-');
+
                     return (pkg.category[1].toLowerCase() === "Discover India Tours for Foreign tourists visiting India".toLowerCase() && indiapkgs < 7 && indiapkgs++) ?
                         (
-                            <div className="pb-2" key={pkg._id}>
-                                <a href={'/packages/' + pkg._id}>
+                            <div className="pb-2" key={pkg.package_code}>
+                                <a href={'/packages/' + (pkg.package_code ? pkg.package_code : "")}>
                                     {pkg.packageName}
                                 </a>
                             </div>
