@@ -42,7 +42,7 @@ let CustomCard = ({ pkgs, tourName }) => {
                         </div>
 
                     </div>
-                    <a href={"/packages/" + pkg._id}>
+                    <a href={"/packages/" + pkg.package_code}>
                         <button
                             style={{
                                 float: 'right',

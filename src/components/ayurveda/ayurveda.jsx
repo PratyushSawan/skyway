@@ -15,7 +15,7 @@ const Ayurveda = () => {
 
     const [pkgs, setpkgs] = useState([])
     async function packagesList() {
-        const data = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
+        const data = await axios.get("http://localhost:4545/api/v1/packages/getAllPackages")
         let pkgs = data.data.map((pkg) => {
             return (pkg.category[0].toLowerCase() === "experiences" && "AYURVEDA RESORTS / PACKAGES" === pkg.category[1]) ? pkg : null
         })
@@ -28,7 +28,7 @@ const Ayurveda = () => {
         if (pkgs && pkgs.length) {
             setloading(false);
         }
-    }, [pkgs])
+    }, [])
 
     const [loading, setloading] = useState(true)
     const LOADER = <div className='text-center align-content-center justify-content-center'><img width="500px" src={require("./loader.gif")} alt="" srcSet="" /></div>
@@ -138,7 +138,7 @@ const Ayurveda = () => {
                                     name={pkg.packageName}
                                     place={pkg.place}
                                     dec={pkg.description}
-                                    _id={pkg._id}
+                                    _id={pkg.package_code}
                                 /> : null
                         )) : <h3 className='text-info font-weight-normal'>No packages found in "Ayurveda" yet.</h3>}
                 </div>

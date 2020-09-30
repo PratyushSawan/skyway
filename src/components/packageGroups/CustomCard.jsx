@@ -49,7 +49,7 @@ let CustomCard = ({ pkgs, group, category, subgroup }) => {
                             Starts at: <b>₹ {costStartsAt(pkg.pricing)} </b>
                         </div>
                     </div>
-                    <a href={"/packages/" + pkg._id}>
+                    <a href={"/packages/" + pkg.package_code}>
                         <button
                             style={{
                                 float: 'right',
