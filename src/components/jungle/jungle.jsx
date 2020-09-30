@@ -9,7 +9,7 @@ import CustomCard from "./CustomCard"
 let Jungle = () => {
     const [pkgs, setpkgs] = useState([])
     async function packagesList() {
-        const Res = await axios.get("http://localhost:4545/api/v1/packages/getAllPackages")
+        const Res = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
         setpkgs(Res.data.filter((pkg) => {
             return ((pkg.category[0].toUpperCase() === "JUNGLE LODGES") ? pkg : null)
         }))
@@ -20,7 +20,7 @@ let Jungle = () => {
         if (pkgs && pkgs.length) {
             setloading(false);
         }
-    }, [pkgs])
+    }, [])
 
     const [loading, setloading] = useState(true)
     const LOADER = <div className='text-center align-content-center justify-content-center'><img width="500px" src={require("./loader.gif")} alt="" srcSet="" /></div>

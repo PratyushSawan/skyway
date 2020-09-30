@@ -83,13 +83,13 @@ let Packages = () => {
     useEffect(() => {
         console.log(packageId);
         //Fetching the packages
-        fetch(`http://localhost:4545/api/v1/packages/getPackage/${packageId}`)
+        fetch(`https://skyway-server.herokuapp.com/api/v1/packages/getPackage/${packageId}`)
             .then((res) => {
                 return res.json()
             })
             .then((data) => {
                 setPackageDetails(data)
-                fetch(`http://localhost:4545/api/v1/packages/getMetaData/${data.packageName}`).then((result) => {
+                fetch(`https://skyway-server.herokuapp.com/api/v1/packages/getMetaData/${data.packageName}`).then((result) => {
                     return result.json()
                 }).then((metadata) => {
                     setMetatags(metadata.meta_keywords)
@@ -99,7 +99,7 @@ let Packages = () => {
             })
         //scrollFix
         makeSidebarSticky()
-    }, [packageId])
+    }, [])
 
 
 

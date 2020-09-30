@@ -11,7 +11,7 @@ let Experience = ({ tourName }) => {
 
     const [pkgs, setpkgs] = useState([])
     async function packagesList() {
-        const data = await axios.get("http://localhost:4545/api/v1/packages/getAllPackages")
+        const data = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
         setpkgs(data.data)
     }
 
@@ -21,7 +21,7 @@ let Experience = ({ tourName }) => {
         if (pkgs && pkgs.length) {
             setloading(false);
         }
-    }, [pkgs])
+    }, [])
 
     const [loading, setloading] = useState(true)
     const Loader = <div className='text-center align-content-center justify-content-center'><img width="500px" src={require("./loader.gif")} alt="" srcSet="" /></div>
