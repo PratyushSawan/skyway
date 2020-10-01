@@ -6,9 +6,9 @@ const ExNav = () => {
 
     const [experiences, setExperiences] = useState([])
     async function packagesList() {
-        const data = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
+        const res = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
 
-        setExperiences(data.data.filter((pkg) => {
+        setExperiences(res.data.filter((pkg) => {
             return ((pkg.category[0].toUpperCase() === "EXPERIENCES" && !pkg.category[1]) ? pkg : null)
         }))
     }
@@ -33,7 +33,7 @@ const ExNav = () => {
             {experiences && experiences.length ? experiences.map((pkg, i) => {
                 return (
                     pkg ?
-                        <a key={'explink' + i} href={'/packages/' + pkg.package_code} style={sty}>
+                        <a key={'explink' + i} href={'/packages/' + pkg.pkgcode} style={sty}>
                             {pkg.packageName}
                         </a>
                         : ""

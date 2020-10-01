@@ -27,13 +27,15 @@ const NewNav = () => {
 
     const [pkgs, setpkgs] = useState([])
     function packagesList() {
-        axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages").then((res) => {
-            setpkgs(res.data)
-
-        }).catch((err) => {
-            console.log(err);
-        });
+        axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
+            .then((res) => {
+                setpkgs(res.data)
+            }).catch((err) => {
+                console.log(err);
+            });
     }
+
+    console.log(pkgs);
 
     useEffect(() => {
         console.log("newnav");
@@ -48,12 +50,11 @@ const NewNav = () => {
             <div>
                 <b>Discover India Tours for Foreign tourist's visiting India</b>
                 {pkgs && pkgs.length ? pkgs.map((pkg, i) => {
-                    let pkgId = pkg.category[0].replace(/ /g, '-') + '--' + pkg.category[1].replace(/ /g, '-') + (pkg.category[2] ? '--' + pkg.category[2] : '') + (pkg.category[3] ? '--' + pkg.category[3] : '') + '--' + pkg.packageName.replace(/ /g, '-');
-
-                    return (pkg.category[1].toLowerCase() === "Discover India Tours for Foreign tourists visiting India".toLowerCase() && indiapkgs < 7 && indiapkgs++) ?
+                    indiapkgs++
+                    return (pkg.category[1].toLowerCase() === "Discover India Tours for Foreign tourists visiting India".toLowerCase() && indiapkgs < 7) ?
                         (
-                            <div className="pb-2" key={pkg.package_code}>
-                                <a href={'/packages/' + (pkg.package_code ? pkg.package_code : "")}>
+                            <div className="pb-2" key={pkg.pkgcode}>
+                                <a href={'/packages/' + (pkg.pkgcode)}>
                                     {pkg.packageName}
                                 </a>
                             </div>

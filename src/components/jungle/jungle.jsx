@@ -13,6 +13,7 @@ let Jungle = () => {
         setpkgs(Res.data.filter((pkg) => {
             return ((pkg.category[0].toUpperCase() === "JUNGLE LODGES") ? pkg : null)
         }))
+        setloading(false);
     }
 
     useEffect(() => {

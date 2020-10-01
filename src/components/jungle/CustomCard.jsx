@@ -49,7 +49,7 @@ let CustomCard = ({ pkgs, tourName }) => {
                             Starts at: <b>₹ {costStartsAt(pkg)} </b>
                         </div>
                     </div>
-                    <a href={"/packages/" + pkg.package_code}>
+                    <a href={"/packages/" + pkg.pkgcode}>
                         <button
                             style={{
                                 float: 'right',

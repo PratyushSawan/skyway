@@ -19,21 +19,23 @@ const Ayurveda = () => {
         let pkgs = data.data.map((pkg) => {
             return (pkg.category[0].toLowerCase() === "experiences" && "AYURVEDA RESORTS / PACKAGES" === pkg.category[1]) ? pkg : null
         })
-        console.log(pkgs);
-        setpkgs(pkgs)
+        console.log(pkgs.filter(x => x));
+        setpkgs(pkgs.filter(x => x))
     }
 
     useEffect(() => {
-        packagesList()
+        if (loading) {
+            packagesList()
+        }
         if (pkgs && pkgs.length) {
             setloading(false);
         }
-    }, [])
+    }, [pkgs])
 
     const [loading, setloading] = useState(true)
     const LOADER = <div className='text-center align-content-center justify-content-center'><img width="500px" src={require("./loader.gif")} alt="" srcSet="" /></div>
 
-    let CustomCard = ({ name, place, dec, image, _id }) => {
+    let CustomCard = ({ name, place, dec, image, pkgcode }) => {
         return (
             <div
                 style={{
@@ -85,7 +87,7 @@ const Ayurveda = () => {
                             Description: <br />
                             {ReactHtmlParser(dec)}
                         </div>
-                        <a href={"/packages/" + _id}>
+                        <a href={"/packages/" + pkgcode}>
                             <button
                                 style={{
                                     margin: '50px 50px 0px 50px',
@@ -138,7 +140,7 @@ const Ayurveda = () => {
                                     name={pkg.packageName}
                                     place={pkg.place}
                                     dec={pkg.description}
-                                    _id={pkg.package_code}
+                                    pkgcode={pkg.pkgcode}
                                 /> : null
                         )) : <h3 className='text-info font-weight-normal'>No packages found in "Ayurveda" yet.</h3>}
                 </div>

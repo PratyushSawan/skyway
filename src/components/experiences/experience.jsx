@@ -15,13 +15,12 @@ let Experience = ({ tourName }) => {
         setpkgs(data.data)
     }
 
-
     useEffect(() => {
         packagesList()
         if (pkgs && pkgs.length) {
             setloading(false);
         }
-    }, [])
+    }, [pkgs, tourName])
 
     const [loading, setloading] = useState(true)
     const Loader = <div className='text-center align-content-center justify-content-center'><img width="500px" src={require("./loader.gif")} alt="" srcSet="" /></div>

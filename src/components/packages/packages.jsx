@@ -81,7 +81,6 @@ let Packages = () => {
     }
 
     useEffect(() => {
-        console.log(packageId);
         //Fetching the packages
         fetch(`https://skyway-server.herokuapp.com/api/v1/packages/getPackage/${packageId}`)
             .then((res) => {
@@ -89,19 +88,10 @@ let Packages = () => {
             })
             .then((data) => {
                 setPackageDetails(data)
-                fetch(`https://skyway-server.herokuapp.com/api/v1/packages/getMetaData/${data.packageName}`).then((result) => {
-                    return result.json()
-                }).then((metadata) => {
-                    setMetatags(metadata.meta_keywords)
-                }).catch((err) => {
-                    console.log(err)
-                });
             })
         //scrollFix
         makeSidebarSticky()
     }, [])
-
-
 
     function pricingAt() {
         let prices = [];
@@ -132,7 +122,7 @@ let Packages = () => {
             if (cost === "deluxe") {
                 let deluxe = []
                 pricing.forEach((price) => {
-                    deluxe.push(price.cost.deCost);
+                    deluxe.push(price.cost.deluxe);
                 })
                 if (deluxe.every((x) => !x)) {
                     return false
@@ -142,7 +132,7 @@ let Packages = () => {
             } else if (cost === "luxury") {
                 let luxury = []
                 pricing.forEach((price) => {
-                    luxury.push(price.cost.luCost);
+                    luxury.push(price.cost.luxury);
                 })
                 if (luxury.every((x) => !x)) {
                     return false
@@ -162,8 +152,9 @@ let Packages = () => {
 
             <div className={style.package}>
                 <Helmet>
-                    <title>{packageDetails ? packageDetails.packageName.toLowerCase() : "Skyway"}</title>
-                    <meta name="keywords" content={metatags} />
+                    {/* <title>{packageDetails.seo.title}</title> */}
+                    <meta name="keywords" content={packageDetails.seo.metaKeys} />
+                    <meta name="description" content={packageDetails.seo.metaDesc} />
                 </Helmet>
                 <div>
                     <Banner
@@ -326,7 +317,7 @@ let Packages = () => {
                                                                 }}
                                                                 src={url}
                                                                 width={'170'}
-                                                                alt=''
+                                                                alt={packageDetails.imagesAltAttrs[idx]}
                                                             />
                                                         </div>
                                                     )
@@ -567,9 +558,9 @@ let Packages = () => {
                                         <tbody>
                                             {packageDetails.hotels ? (
                                                 packageDetails.hotels.map(
-                                                    (hotel) => {
+                                                    (hotel, i) => {
                                                         return (
-                                                            <tr>
+                                                            <tr key={'hotel' + i}>
                                                                 <td>
                                                                     {hotel.place}
                                                                 </td>

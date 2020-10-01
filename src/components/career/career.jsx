@@ -60,7 +60,7 @@ const Career = () => {
                                     </p>
                                 </li>
                                 <li>
-                                    <b>Manager - SEO & Digital Marketing:</b>{' '}
+                                    <b>Manager - seo & Digital Marketing:</b>{' '}
                                     <br />
                                     <p>
                                         Person having thorough knowledge in
