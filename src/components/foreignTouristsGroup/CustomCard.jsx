@@ -4,19 +4,7 @@ import ReactHtmlParser from 'react-html-parser';
 import searchStyle from './styles.css'
 
 let CustomCard = ({ pkgs, tourName }) => {
-    const costStartsAt = (pricing) => {
-        let prices = [];
 
-        pricing.forEach(price => {
-            if (price.cost.standard !== 0) {
-                prices.push(price.cost.standard)
-            }
-        });
-
-        let minPrice = Math.min(...prices)
-
-        return minPrice;
-    }
 
     let pkgCards = pkgs.map((pkg, i) => {
         return (pkg ? (
@@ -36,7 +24,7 @@ let CustomCard = ({ pkgs, tourName }) => {
                         </div>
                         <div className={searchStyle.places}>{pkg.place}</div>
                         <div style={{ float: 'left' }}>
-                            Starts at: <b>₹ {costStartsAt(pkg.pricing)} </b>
+                            Starts at: <b>₹ {pkg.priceStartsAt} </b>
                         </div>
                     </div>
                     <a href={"/packages/" + pkg.pkgcode}>

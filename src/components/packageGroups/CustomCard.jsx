@@ -3,19 +3,7 @@ import searchStyle from './style.css'
 import { FaClock, FaArrowRight } from 'react-icons/fa'
 
 let CustomCard = ({ pkgs, group, category, subgroup }) => {
-    const costStartsAt = (pricing) => {
-        let prices = [];
 
-        pricing.forEach(price => {
-            if (price.cost.standard !== 0) {
-                prices.push(price.cost.standard)
-            }
-        });
-
-        let minPrice = Math.min(...prices)
-
-        return minPrice;
-    }
     if (subgroup) {
         pkgs = pkgs.map((pkg) => {
             return (pkg.category[3].toLowerCase() === subgroup.toLowerCase() ? pkg : null)
@@ -46,7 +34,7 @@ let CustomCard = ({ pkgs, group, category, subgroup }) => {
                         </div>
                         <div className={searchStyle.places}>{pkg.place}</div>
                         <div style={{ float: 'left' }}>
-                            Starts at: <b>₹ {costStartsAt(pkg.pricing)} </b>
+                            Starts at: <b>₹ {pkg.priceStartsAt} </b>
                         </div>
                     </div>
                     <a href={"/packages/" + pkg.pkgcode}>

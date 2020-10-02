@@ -7,8 +7,8 @@ const RoadRoutes = () => {
             image={require('../asserts/images/142302.jpg')}
             title={'IMPORTANT ROAD ROUTES'}
         >
-            <div class='table-responsive'>
-                <table class='table table-striped'>
+            <div className='table-responsive'>
+                <table className='table table-striped'>
                     <tbody>
                         <tr>
                             <td>

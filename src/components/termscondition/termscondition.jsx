@@ -7,9 +7,9 @@ const TermsAndCondition = () => {
             title={'TERMS & CONDITIONS'}
             image={require('../asserts/images/carlous-img3.jpg')}
         >
-            <div class='col-sm-9'>
-                <div class='contentWrapper'>
-                    <div class='content'></div>
+            <div className='col-sm-9'>
+                <div className='contentWrapper'>
+                    <div className='content'></div>
                 </div>
                 <h5>
                     BOOKING &amp; PAYMENT CONDITIONS INCLUDING CANCELLATIONS AND

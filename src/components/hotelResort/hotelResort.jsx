@@ -34,7 +34,7 @@ const HotelResort = () => {
                                 9001-2015 Certified Travel Company
                             </p>
                             <b>Our preferred Hotels / Resorts in India</b>
-                            <table class='table table-striped'>
+                            <table className='table table-striped'>
                                 <tbody>
                                     <tr>
                                         <td>

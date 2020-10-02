@@ -28,9 +28,9 @@ let AboutIndia = () => {
                     />
                 </Tab>
                 <Tab eventKey='profile' title='Fact Sheet'>
-                    <div class='table-responsive'>
+                    <div className='table-responsive'>
                         <br />
-                        <table class='table table-striped'>
+                        <table className='table table-striped'>
                             <tbody>
                                 <tr>
                                     <td width='20%'>

@@ -33,7 +33,7 @@ const HappyCustomers = () => {
                                 <div className='col-1'>
                                     <FaQuoteLeft />
                                 </div>
-                                <div class='col-md-11'>
+                                <div className='col-md-11'>
                                     Here is the feedback from my trip, Asha. I
                                     will just do quick bullet points for you.{' '}
                                     <br />
@@ -212,11 +212,11 @@ const HappyCustomers = () => {
                             </div>
                             <br />
                             <br />
-                            <div class='row'>
-                                <div class='col-md-1'>
+                            <div className='row'>
+                                <div className='col-md-1'>
                                     <FaQuoteLeft />
                                 </div>
-                                <div class='col-md-11'>
+                                <div className='col-md-11'>
                                     Dear Mr Mahalingaiah,
                                     <br />
                                     <br />
@@ -242,11 +242,11 @@ const HappyCustomers = () => {
                             </div>
                             <br />
                             <br />
-                            <div class='row'>
-                                <div class='col-md-1'>
+                            <div className='row'>
+                                <div className='col-md-1'>
                                     <FaQuoteLeft />
                                 </div>
-                                <div class='col-md-11'>
+                                <div className='col-md-11'>
                                     Dear Dinesh,
                                     <br />
                                     <br />
@@ -285,11 +285,11 @@ const HappyCustomers = () => {
                             </div>
                             <br />
                             <br />
-                            <div class='row'>
-                                <div class='col-md-1'>
+                            <div className='row'>
+                                <div className='col-md-1'>
                                     <FaQuoteLeft />
                                 </div>
-                                <div class='col-md-11'>
+                                <div className='col-md-11'>
                                     Dear Mr. Dinesh
                                     <br />
                                     <br />
@@ -313,11 +313,11 @@ const HappyCustomers = () => {
                             </div>
                             <br />
                             <br />
-                            <div class='row'>
-                                <div class='col-md-1'>
+                            <div className='row'>
+                                <div className='col-md-1'>
                                     <FaQuoteLeft />
                                 </div>
-                                <div class='col-md-11'>
+                                <div className='col-md-11'>
                                     Hello Dinesh
                                     <br />
                                     <br />
@@ -352,11 +352,11 @@ const HappyCustomers = () => {
                             </div>
                             <br />
                             <br />
-                            <div class='row'>
-                                <div class='col-md-1'>
+                            <div className='row'>
+                                <div className='col-md-1'>
                                     <FaQuoteLeft />
                                 </div>
-                                <div class='col-md-11'>
+                                <div className='col-md-11'>
                                     Dear Dinesh
                                     <br />
                                     <br />
@@ -398,11 +398,11 @@ const HappyCustomers = () => {
                             </div>
                             <br />
                             <br />
-                            <div class='row'>
-                                <div class='col-md-1'>
+                            <div className='row'>
+                                <div className='col-md-1'>
                                     <FaQuoteLeft />
                                 </div>
-                                <div class='col-md-11'>
+                                <div className='col-md-11'>
                                     Dear Mr.Dinesh,
                                     <br />
                                     <br />
@@ -427,11 +427,11 @@ const HappyCustomers = () => {
                             </div>
                             <br />
                             <br />
-                            <div class='row'>
-                                <div class='col-md-1'>
+                            <div className='row'>
+                                <div className='col-md-1'>
                                     <FaQuoteLeft />
                                 </div>
-                                <div class='col-md-11'>
+                                <div className='col-md-11'>
                                     Dear Asha and colleagues,
                                     <br />
                                     <br />
@@ -459,11 +459,11 @@ const HappyCustomers = () => {
                             </div>
                             <br />
                             <br />
-                            <div class='row'>
-                                <div class='col-md-1'>
+                            <div className='row'>
+                                <div className='col-md-1'>
                                     <FaQuoteLeft />
                                 </div>
-                                <div class='col-md-11'>
+                                <div className='col-md-11'>
                                     Dear Asha,
                                     <br />
                                     <br />

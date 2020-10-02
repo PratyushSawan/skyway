@@ -8,8 +8,8 @@ const BookingCondition = () => {
             image={require('../asserts/images/carlous-img3.jpg')}
         >
             <div>
-                <div class='contentWrapper'>
-                    <div class='content'>
+                <div className='contentWrapper'>
+                    <div className='content'>
                         <h>
                             India is the seventh largest country in the world.
                             The country's official name, India is derived from

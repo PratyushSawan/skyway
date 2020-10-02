@@ -93,30 +93,6 @@ let Packages = () => {
         makeSidebarSticky()
     }, [])
 
-    function pricingAt() {
-        let prices = [];
-
-        if (packageDetails.category[0] === "JUNGLE LODGES") {
-            packageDetails.pricing.forEach(price => {
-                if (price.cost.singleOcc.weekday != 0) {
-                    prices.push(price.cost.singleOcc.weekday)
-                }
-            });
-        }
-        else {
-            packageDetails.pricing.forEach(price => {
-                if (price.cost.standard != 0) {
-                    prices.push(price.cost.standard)
-                }
-            });
-
-        }
-
-        let minPrice = Math.min(...prices)
-
-        return minPrice;
-    }
-
     let hasCost = (pricing, cost) => {
         if (pricing && pricing.length) {
             if (cost === "deluxe") {
@@ -162,7 +138,7 @@ let Packages = () => {
                         image={packageDetails.imageUrl}
                         duration={packageDetails.duration}
                         places={packageDetails.place}
-                        pricingAt={pricingAt()}
+                        pricingAt={packageDetails.priceStartsAt}
                     />
                     <BreadcrumComp category={packageDetails.category[0]} tourName={packageDetails.packageName} />
                     <div className='row'>
@@ -533,8 +509,8 @@ let Packages = () => {
                                         {packageDetails.itinerary ? (
                                             packageDetails.itinerary.map((it) => (
                                                 <Step
-                                                    title={it.place}
-                                                    description={it.dec}
+                                                    title={`Day ${it.day} : ${it.place}`}
+                                                    description={it.description}
                                                 />
                                             ))
                                         ) : (
