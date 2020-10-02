@@ -32,7 +32,6 @@ const { Step } = Steps
 let Packages = () => {
     let [packageDetails, setPackageDetails] = useState([])
     let { packageId } = useParams()
-    const [metatags, setMetatags] = useState("")
 
     let [photoIndex, setPhotoIndex] = useState(0)
     let [isOpen, setIsOpen] = useState(false)
