@@ -82,7 +82,7 @@ let CustomCard = ({ pkgs, tourName }) => {
 
             {pkgs && pkgs.length ?
                 <div>{pkgCards}</div>
-                : <h3 className='text-info font-weight-normal'>No packages found in "{tourName}" yet.</h3>}
+                : <h3 className='text-info font-weight-normal'>No results found.</h3>}
         </div>
     )
 }

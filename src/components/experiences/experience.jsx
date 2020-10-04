@@ -23,8 +23,22 @@ let Experience = ({ tourName }) => {
     }, [pkgs, tourName])
 
     const [loading, setloading] = useState(true)
-    const Loader = <div className='text-center align-content-center justify-content-center'><img width="500px" src={require("./loader.gif")} alt="" srcSet="" /></div>
-
+    const Loader = (
+        <div
+            style={{
+                width: '100vw',
+                height: '600px',
+                display: 'flex',
+                backgroundColor: '#f1f2f3',
+                justifyContent: 'center',
+            }}
+        >
+            <img
+                src={require('../assets/animated/Pulse-1s-200px.svg')}
+                alt=''
+            />
+        </div>
+    )
     return (
         <div>
             <SimpleBanner

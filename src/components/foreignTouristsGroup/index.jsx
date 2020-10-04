@@ -86,8 +86,22 @@ let ForeignTouristsGroup = () => {
     }
 
     const [loading, setloading] = useState(true)
-    const LOADER = <div className='text-center align-content-center justify-content-center'><img width="500px" src={require("./loader.gif")} alt="" srcSet="" /></div>
-
+    const LOADER = (
+        <div
+            style={{
+                width: '100vw',
+                height: '600px',
+                display: 'flex',
+                backgroundColor: '#f1f2f3',
+                justifyContent: 'center',
+            }}
+        >
+            <img
+                src={require('../assets/animated/Pulse-1s-200px.svg')}
+                alt=''
+            />
+        </div>
+    )
     return (
         <div>
             <ToastContainer />

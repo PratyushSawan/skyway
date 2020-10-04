@@ -100,7 +100,7 @@ let PackageGroup = () => {
         let noResult = true;
         if (fl.price) {
             flPkgs = bkupPkg.filter((pkg) => {
-                return Number(bkupPkg.priceStartsAt) <= Number(fl.price) ? pkg : null
+                return Number(pkg.priceStartsAt) <= Number(fl.price) ? pkg : null
             })
             noResult = flPkgs.length ? false : true
         } else {
@@ -131,7 +131,7 @@ let PackageGroup = () => {
                 message = message.split("/").reverse()
                 message.shift()
                 message = "No packages found for the filter(s): \n  " + message.join("\n  ")
-                toastAlert(message, "info", 5000)
+                toastAlert(<pre style={{ color: "white", padding: "2px", margin: 0, fontFamily: "arial serif" }}>{message}</pre>, "info", 5000)
             }
         } else {
             toastAlert("No filter options were entered", "error", 2500)
@@ -150,21 +150,27 @@ let PackageGroup = () => {
             draggable: true,
         })
     }
+    let LoadingJSX = (
+        <div
+            style={{
+                width: '100vw',
+                height: '600px',
+                display: 'flex',
+                backgroundColor: '#f1f2f3',
+                justifyContent: 'center',
+            }}
+        >
+            <img
+                src={require('../assets/animated/Pulse-1s-200px.svg')}
+                alt=''
+            />
+        </div>
+    )
     return (
         <div>
             {loading ?
-                <div style={{ background: "white", position: 'fixed', width: "100vw", height: '100vh', zIndex: 5000, top: 0, left: 0 }}>
-                    <div style={{
-                        position: "fixed",
-                        top: "50%",
-                        left: "50%",
-                        transform: "translate(-50%, -50%)"
-                    }}>
-                        <img style={{ width: "400px" }} src={require("./loader.gif")} alt="" />
-                    </div>
-                </div>
-                :
-                found ?
+                { LoadingJSX }
+                : found ?
                     <div >
                         <ToastContainer />
                         <SimpleBanner

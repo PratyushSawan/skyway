@@ -29,7 +29,23 @@ const Ayurveda = () => {
         packagesList()
     }, [])
 
-    const LOADER = <div className='text-center align-content-center justify-content-center'><img width="500px" src={require("./loader.gif")} alt="" srcSet="" /></div>
+    let LoadingJSX = (
+        <div
+            style={{
+                width: '100vw',
+                height: '600px',
+                display: 'flex',
+                backgroundColor: '#f1f2f3',
+                justifyContent: 'center',
+            }}
+        >
+            <img
+                src={require('../assets/animated/Pulse-1s-200px.svg')}
+                alt=''
+            />
+        </div>
+    )
+    const LOADER = LoadingJSX
 
     let CustomCard = ({ name, place, dec, image, pkgcode }) => {
         return (
@@ -138,7 +154,7 @@ const Ayurveda = () => {
                                     dec={pkg.description}
                                     pkgcode={pkg.pkgcode}
                                 /> : null
-                        )) : <h3 className='text-info font-weight-normal'>No packages found in "Ayurveda" yet.</h3>}
+                        )) : <h3 className='text-info font-weight-normal'>No packages results found.</h3>}
                 </div>
                 <div className='col-3'>
                     <HolidayClub />
