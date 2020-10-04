@@ -11,7 +11,7 @@ const HappyCustomers = () => {
     return (
         <div>
             <SimpleBanner
-                image={require('../asserts/images/ballooners.jpg')}
+                image={require('../assets/images/ballooners.jpg')}
                 name={'Happy Customers'}
             />
             <BreadcrumComp />

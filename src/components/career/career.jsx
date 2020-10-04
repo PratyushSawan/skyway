@@ -13,7 +13,7 @@ const Career = () => {
     return (
         <div>
             <SimpleBanner
-                image={require('../asserts/images/career.jpg')}
+                image={require('../assets/images/career.jpg')}
                 name={'CAREER'}
             />
             <BreadcrumComp />

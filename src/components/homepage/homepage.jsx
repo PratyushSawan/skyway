@@ -52,13 +52,13 @@ let HomepageHandPicked = () => {
                     <div className='row'>
                         <div className='col-md-6'>
                             <CustomCard
-                                image={require('../asserts/prototype/holiday1.webp')}
+                                image={require('../assets/prototype/holiday1.webp')}
                                 name='GOLDEN TRIANGLE TOUR PACKAGE'
                             />
                         </div>
                         <div className='col-md-6'>
                             <CustomCard
-                                image={require('../asserts/prototype/holiday2.webp')}
+                                image={require('../assets/prototype/holiday2.webp')}
                                 name='KERELA GALORE'
                             />
                         </div>
@@ -66,13 +66,13 @@ let HomepageHandPicked = () => {
                     <div className='row'>
                         <div className='col-md-6'>
                             <CustomCard
-                                image={require('../asserts/prototype/holiday3.webp')}
+                                image={require('../assets/prototype/holiday3.webp')}
                                 name='EXPLORE COORG'
                             />
                         </div>
                         <div className='col-md-6'>
                             <CustomCard
-                                image={require('../asserts/prototype/holiday4.webp')}
+                                image={require('../assets/prototype/holiday4.webp')}
                                 name='DAZZLING DUBAI'
                             />
                         </div>
@@ -152,7 +152,7 @@ let PopularTours = () => {
                             <APopularCard
                                 description='Himachal Delight Honeymoon package'
                                 duration='6 nights / 7 days'
-                                image={require('../asserts/images/populat0.jpg')}
+                                image={require('../assets/images/populat0.jpg')}
                                 priceDetail={'Starts at ₹ 19200/- PP'}
                             />
                         </div>
@@ -160,7 +160,7 @@ let PopularTours = () => {
                             <APopularCard
                                 description='European Delight'
                                 duration='6 nights / 7 days'
-                                image={require('../asserts/images/popular1.jpg')}
+                                image={require('../assets/images/popular1.jpg')}
                                 priceDetail={'starts at ₹ 67000/- PP'}
                             />
                         </div>
@@ -168,7 +168,7 @@ let PopularTours = () => {
                             <APopularCard
                                 description='Pondicherry getaway'
                                 duration='3 nights / 4 days'
-                                image={require('../asserts/images/pupular2.jpg')}
+                                image={require('../assets/images/pupular2.jpg')}
                                 priceDetail={'Starts at ₹ 10200/- PP'}
                             />
                         </div>
@@ -176,7 +176,7 @@ let PopularTours = () => {
                             <APopularCard
                                 description='Australian east coaster EAST COASTER'
                                 duration='09 nights/ 10 days'
-                                image={require('../asserts/images/popular3.jpg')}
+                                image={require('../assets/images/popular3.jpg')}
                                 priceDetail={'Starts at ₹ 97300/- PP'}
                             />
                         </div>
@@ -200,14 +200,14 @@ let IndianSpritualTours = () => {
                             <PopularCard
                                 priceDetail='Starts at ₹ 136000/- pp'
                                 description='Kailash Manasarovara Yatra By OVERLAND - 2020'
-                                image={require('../asserts/prototype/spritual1.webp')}
+                                image={require('../assets/prototype/spritual1.webp')}
                             />
                         </div>
                         <div className='col-md-3'>
                             <PopularCard
                                 priceDetail='Starts at ₹ 180000/- pp'
                                 description='Kailash Manasarovara Yatra By HELICOPTER - 2020'
-                                image={require('../asserts/prototype/spritual2.webp')}
+                                image={require('../assets/prototype/spritual2.webp')}
                             />
                         </div>
                         <div className='col-md-3'>
@@ -215,7 +215,7 @@ let IndianSpritualTours = () => {
                                 duration='12 Nights / 13 Days'
                                 priceDetail='Starts at ₹ 31500/- pp'
                                 description='Char Dham Yatra 2020'
-                                image={require('../asserts/prototype/spritual3.webp')}
+                                image={require('../assets/prototype/spritual3.webp')}
                             />
                         </div>
                         <div className='col-md-3'>
@@ -223,7 +223,7 @@ let IndianSpritualTours = () => {
                                 duration='1 Nights / 2 Days'
                                 priceDetail='Starts at ₹ 6000/- pp'
                                 description='Tirupathi Seeghra Darshan Package'
-                                image={require('../asserts/prototype/spritual4.webp')}
+                                image={require('../assets/prototype/spritual4.webp')}
                             />
                         </div>
                     </div>

@@ -15,7 +15,7 @@ const HotelResort = () => {
         <div>
             <SimpleBanner
                 name={'HOTEL RESORT LIST'}
-                image={require('../asserts/images/hotel.jpg')}
+                image={require('../assets/images/hotel.jpg')}
             />
             <BreadcrumComp />
             <div className='container-fluid' style={{ margin: '20px 0px' }}>

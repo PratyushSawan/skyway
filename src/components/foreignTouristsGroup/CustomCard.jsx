@@ -1,10 +1,8 @@
 import React from 'react'
 import { FaClock, FaArrowRight } from 'react-icons/fa'
-import ReactHtmlParser from 'react-html-parser';
 import searchStyle from './styles.css'
 
-let CustomCard = ({ pkgs, tourName }) => {
-
+let CustomCard = ({ pkgs }) => {
 
     let pkgCards = pkgs.map((pkg, i) => {
         return (pkg ? (
@@ -44,16 +42,6 @@ let CustomCard = ({ pkgs, tourName }) => {
         ) : "")
     })
 
-    const nbPkgsFound = () => {
-        let nb = 0;
-        pkgCards.forEach(pkg => {
-            if (pkg && pkg.length) {
-                nb++
-            }
-        });
-        return nb
-    }
-
     return (
         <div className={searchStyle.customCard}>
             <div
@@ -69,7 +57,7 @@ let CustomCard = ({ pkgs, tourName }) => {
                         fontSize: '20pt',
                     }}
                 >
-                    Packages found ({nbPkgsFound()})
+                    Packages found ({pkgs.length})
                                 </div>
                 <div
                     style={{
@@ -83,7 +71,7 @@ let CustomCard = ({ pkgs, tourName }) => {
 
             {pkgs && pkgs.length ?
                 <div>{pkgCards}</div>
-                : <h3 className='text-info font-weight-normal'>No packages found in "{tourName}" yet.</h3>}
+                : <h3 className='text-info font-weight-normal'>No packages found here yet.</h3>}
         </div>
     )
 }

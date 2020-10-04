@@ -29,7 +29,7 @@ let Experience = ({ tourName }) => {
         <div>
             <SimpleBanner
                 image={
-                    require('../asserts/images/carlous-img1.jpg')
+                    require('../assets/images/carlous-img1.jpg')
                 }
                 name='Experiences'
             />

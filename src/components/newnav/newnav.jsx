@@ -26,43 +26,37 @@ const NewNav = () => {
 
 
     const [pkgs, setpkgs] = useState([])
-    function packagesList() {
-        axios.get("http://localhost:4545/api/v1/packages/getAllPackages")
-            .then((res) => {
-                setpkgs(res.data)
-            }).catch((err) => {
-                console.log(err);
-            });
+    async function packagesList() {
+        const Res = await axios.get("http://localhost:4545/api/v1/packages/getAllPackages")
+        setpkgs(Res.data.filter((pkg) => {
+            return ((pkg.category[1].toUpperCase() === "Discover India Tours for Foreign tourists visiting India".toUpperCase()) ? pkg : null)
+        }))
     }
 
-    console.log(pkgs);
-
     useEffect(() => {
-        console.log("newnav");
-        packagesList();
+        packagesList()
     }, [])
-
-    let [indiapkgs, setindiapkgs] = useState(0)
 
     return (
 
         <div className={style.newnav}>
             <div>
                 <b>Discover India Tours for Foreign tourist's visiting India</b>
-                {pkgs && pkgs.length ? pkgs.map((pkg, i) => {
-                    indiapkgs++
-                    return (pkg.category[1].toLowerCase() === "Discover India Tours for Foreign tourists visiting India".toLowerCase() && indiapkgs < 7) ?
-                        (
-                            <div className="pb-2" key={pkg.pkgcode}>
-                                <a href={'/packages/' + (pkg.pkgcode)}>
-                                    {pkg.packageName}
-                                </a>
-                            </div>
-                        )
-                        : null
-                }) : <p>No Packages in This Group Yet!</p>}
+                {pkgs && pkgs.length ?
+                    <div>
+                        {
+                            pkgs.map((pkg, i) => {
+                                return i < 6 ? (
+
+                                    <a className="pb-2" href={'/packages/' + (pkg.pkgcode)} key={pkg.pkgcode}>
+                                        {pkg.packageName}
+                                    </a>
+                                ) : null
+                            })}
+                    </div>
+                    : <p>No Packages in This Group Yet!</p>}
                 <a href="/holidays/Tours-for-Foreign-tourists" style={{ color: 'blue' }}>See More</a>
-                <img src={require('../asserts/images/taj.png')} alt='' />
+                <img src={require('../assets/images/taj.png')} alt='' />
             </div>
             <div>
                 <b>India Tours for indian tourists to travel within India</b>
@@ -89,7 +83,7 @@ const NewNav = () => {
                 <div>
                     <a href={'/holidays/Honeymoon-Packages/International'}>International</a>
                 </div>
-                <img src={require('../asserts/images/menu2.png')} alt='' />
+                <img src={require('../assets/images/menu2.png')} alt='' />
             </div>
             <div>
                 <span style={{ width: "auto", background: 'white' }}>
@@ -146,7 +140,7 @@ const NewNav = () => {
                         <a href='/holidays/International/Honeymoon-Packages'>Honeymoon Packages</a>
                     </div>
                 </span>
-                <img src={require('../asserts/images/menu3.png')} alt='' />
+                <img src={require('../assets/images/menu3.png')} alt='' />
             </div >
             <div>
                 <span>
@@ -167,7 +161,7 @@ const NewNav = () => {
                         <a href='/holidays/Destination/Coach-Tours'>Coach Tours</a>
                     </div>
                 </span>
-                <img src={require('../asserts/images/menu5.png')} alt='' />
+                <img src={require('../assets/images/menu5.png')} alt='' />
             </div>
         </div >
     )

@@ -5,7 +5,7 @@ const BookingCondition = () => {
     return (
         <SimplePage
             title={'BOOKING CONDITIONS'}
-            image={require('../asserts/images/carlous-img3.jpg')}
+            image={require('../assets/images/carlous-img3.jpg')}
         >
             <div>
                 <div className='contentWrapper'>

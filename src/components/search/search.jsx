@@ -15,7 +15,7 @@ let CustomCard = () => {
                 <div className='col-md-5'>
                     <img
                         className={searchStyle.cardImage}
-                        src={require('../asserts/images/carlous-img1.jpg')}
+                        src={require('../assets/images/carlous-img1.jpg')}
                         alt=''
                     />
                 </div>
@@ -69,7 +69,7 @@ class Search extends React.Component {
         return (
             <div>
                 <SimpleBanner
-                    image={require('../asserts/images/carlous-img1.jpg')}
+                    image={require('../assets/images/carlous-img1.jpg')}
                     name='DISCOVER INDIA TOURS - INDIA TOUR PACKAGES'
                 />
                 <BreadcrumComp />

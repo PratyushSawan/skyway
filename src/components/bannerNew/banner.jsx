@@ -2,11 +2,11 @@ import React, { useEffect } from 'react'
 
 let BannerNew = () => {
     let images = [
-        require('../asserts/images/142302.jpg'),
-        require('../asserts/images/travel.jpeg'),
-        require('../asserts/images/carlous-img2.jpg'),
-        require('../asserts/images/carlous-img3.jpg'),
-        require('../asserts/images/carlous-img4.jpg'),
+        require('../assets/images/142302.jpg'),
+        require('../assets/images/travel.jpeg'),
+        require('../assets/images/carlous-img2.jpg'),
+        require('../assets/images/carlous-img3.jpg'),
+        require('../assets/images/carlous-img4.jpg'),
     ]
 
     useEffect(() => {

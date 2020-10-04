@@ -5,7 +5,7 @@ const PhotoGallery = () => {
     return (
         <SimplePage
             title={'Photo Gallery'}
-            image={require('../asserts/images/carlous-img2.jpg')}
+            image={require('../assets/images/carlous-img2.jpg')}
         >
             <h1>Photo GAllery</h1>
             <p>The page will be updated soon</p>

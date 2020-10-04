@@ -21,7 +21,7 @@ let Navbar = () => {
                     }}
                     style={{
                         cursor: 'pointer',
-                        backgroundImage: `url(${require('../asserts/images/brand-image.jpg')})`,
+                        backgroundImage: `url(${require('../assets/images/brand-image.jpg')})`,
                     }}
                     className={navbarStyle.brandImage}
                 ></div>
@@ -31,7 +31,7 @@ let Navbar = () => {
                         <img
                             width='30'
                             height='30'
-                            src={require('../asserts/images/icons/time.svg')}
+                            src={require('../assets/images/icons/time.svg')}
                             alt=''
                         />
 
@@ -41,7 +41,7 @@ let Navbar = () => {
                         <img
                             width='30'
                             height='30'
-                            src={require('../asserts/images/icons/call.svg')}
+                            src={require('../assets/images/icons/call.svg')}
                             alt=''
                         />
                         <b>&nbsp;&nbsp;+91-8884 467467</b>
@@ -50,7 +50,7 @@ let Navbar = () => {
                         <img
                             width='30'
                             height='30'
-                            src={require('../asserts/images/icons/whatsapp.png')}
+                            src={require('../assets/images/icons/whatsapp.png')}
                             alt=''
                         />
                         <b>&nbsp;&nbsp; +91-98451 55833</b>
@@ -59,7 +59,7 @@ let Navbar = () => {
                         <img
                             width='30'
                             height='30'
-                            src={require('../asserts/images/icons/facebook.svg')}
+                            src={require('../assets/images/icons/facebook.svg')}
                             alt=''
                         />
                     </div>
@@ -67,7 +67,7 @@ let Navbar = () => {
                         <img
                             width='30'
                             height='30'
-                            src={require('../asserts/images/icons/twitter.svg')}
+                            src={require('../assets/images/icons/twitter.svg')}
                             alt=''
                         />
                     </div>
@@ -75,7 +75,7 @@ let Navbar = () => {
                         <img
                             width='30'
                             height='30'
-                            src={require('../asserts/images/icons/linkedin.svg')}
+                            src={require('../assets/images/icons/linkedin.svg')}
                             alt=''
                         />
                     </div>
@@ -83,7 +83,7 @@ let Navbar = () => {
                         <img
                             width='30'
                             height='30'
-                            src={require('../asserts/images/icons/instagram.svg')}
+                            src={require('../assets/images/icons/instagram.svg')}
                             alt=''
                         />
                     </div>
@@ -91,7 +91,7 @@ let Navbar = () => {
                         <img
                             width='30'
                             height='30'
-                            src={require('../asserts/images/icons/google-plus.svg')}
+                            src={require('../assets/images/icons/google-plus.svg')}
                             alt=''
                         />
                     </div>
@@ -99,7 +99,7 @@ let Navbar = () => {
                         <img
                             width='30'
                             height='30'
-                            src={require('../asserts/images/icons/pinterest.svg')}
+                            src={require('../assets/images/icons/pinterest.svg')}
                             alt=''
                         />
                     </div>
@@ -107,7 +107,7 @@ let Navbar = () => {
                         <img
                             width='80'
                             height='80'
-                            src={require('../asserts/images/25logo.jpg')}
+                            src={require('../assets/images/25logo.jpg')}
                             alt=''
                         />
                     </div>

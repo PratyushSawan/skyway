@@ -4,7 +4,7 @@ import SimplePage from '../layouts/simplePage'
 const RoadRoutes = () => {
     return (
         <SimplePage
-            image={require('../asserts/images/142302.jpg')}
+            image={require('../assets/images/142302.jpg')}
             title={'IMPORTANT ROAD ROUTES'}
         >
             <div className='table-responsive'>

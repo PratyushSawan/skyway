@@ -5,7 +5,7 @@ const TermsAndCondition = () => {
     return (
         <SimplePage
             title={'TERMS & CONDITIONS'}
-            image={require('../asserts/images/carlous-img3.jpg')}
+            image={require('../assets/images/carlous-img3.jpg')}
         >
             <div className='col-sm-9'>
                 <div className='contentWrapper'>

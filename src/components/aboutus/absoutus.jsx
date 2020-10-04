@@ -63,7 +63,7 @@ const AboutUs = () => {
     return (
         <div>
             <SimpleBanner
-                image={require('../asserts/images/WhyPeopleTravel_main.jpg')}
+                image={require('../assets/images/WhyPeopleTravel_main.jpg')}
                 name={'About us'}
             />
             <BreadcrumComp />
@@ -165,7 +165,7 @@ const AboutUs = () => {
                                 & Pacific Asia Travel Association (PATA).
                             </p>
                             <img
-                                src={require('../asserts/images/about-us1.jpg')}
+                                src={require('../assets/images/about-us1.jpg')}
                                 style={{
                                     width: '100%',
                                 }}
@@ -217,7 +217,7 @@ const AboutUs = () => {
                                 head={
                                     'S.Mahalingaiah (Manu) - Founder Director'
                                 }
-                                image={require('../asserts/images/Manu-Sir-Director.jpg')}
+                                image={require('../assets/images/Manu-Sir-Director.jpg')}
                             />
                             <Management
                                 dec={
@@ -226,7 +226,7 @@ const AboutUs = () => {
                                 head={
                                     'Amaravathy M.M. (Vishal) - Co Founder-Managing Director'
                                 }
-                                image={require('../asserts/images/vishal-Madam.jpg')}
+                                image={require('../assets/images/vishal-Madam.jpg')}
                             />
                             <Management
                                 dec={
@@ -237,17 +237,17 @@ const AboutUs = () => {
                                 head={
                                     'Venugopalan Nambiar - Sr. Manager and Head-Admin & OM'
                                 }
-                                image={require('../asserts/images/VENUGOPALAN.jpg')}
+                                image={require('../assets/images/VENUGOPALAN.jpg')}
                             />
                             <Management
-                                image={require('../asserts/images/Manjunath.jpg')}
+                                image={require('../assets/images/Manjunath.jpg')}
                                 dec={
                                     'Joined as Counter Assistance during 1996 and is now working as Manager Travel with Skyway, Mysore. He is working with the company for the last 15 years. He is in-charge of entire operations.'
                                 }
                                 head={'S.Manjunatha - Manager Operation'}
                             />
                             <Management
-                                image={require('../asserts/images/Asha.jpg')}
+                                image={require('../assets/images/Asha.jpg')}
                                 dec={
                                     'Bachelor of Science from Mysore University joined Skyway during 2004 as Counter Assistance Tours. At present, Asst. Manager Tours. She is in-charge of Inbound and Domestic Tours.'
                                 }
@@ -257,7 +257,7 @@ const AboutUs = () => {
                         <div id={'boardofdirector'}>
                             <h2>Board of directors</h2>
                             <Management
-                                image={require('../asserts/images/Manu-Sir-Director.jpg')}
+                                image={require('../assets/images/Manu-Sir-Director.jpg')}
                                 head={
                                     'S.Mahalingaiah (Manu) - Founder Director'
                                 }
@@ -266,7 +266,7 @@ const AboutUs = () => {
                                 }
                             />
                             <Management
-                                image={require('../asserts/images/vishal-Madam.jpg')}
+                                image={require('../assets/images/vishal-Madam.jpg')}
                                 head={
                                     'Amaravathy M.M. (Vishal) - Co Founder-Managing Director'
                                 }
@@ -279,16 +279,16 @@ const AboutUs = () => {
                                 dec={
                                     'Retired from Indian Army, joined the company and takes care of operations'
                                 }
-                                image={require('../asserts/images/Mr-Mudanna.jpg')}
+                                image={require('../assets/images/Mr-Mudanna.jpg')}
                             />
                             <Management
-                                image={require('../asserts/images/arun.jpg')}
+                                image={require('../assets/images/arun.jpg')}
                                 head={'Mr Arun Soni'}
                                 dec={'Director'}
                             />
                             <Management
                                 head={'Ms. Monica Lindberg'}
-                                image={require('../asserts/images/Monica-Lindberg.jpg')}
+                                image={require('../assets/images/Monica-Lindberg.jpg')}
                                 dec={'Director'}
                             />
                         </div>
@@ -304,7 +304,7 @@ const AboutUs = () => {
                             >
                                 <div className='col-3'>
                                     <img
-                                        src={require('../asserts/images/Vittala-Murthy.jpg')}
+                                        src={require('../assets/images/Vittala-Murthy.jpg')}
                                         alt=''
                                     />
                                 </div>
@@ -415,7 +415,7 @@ const AboutUs = () => {
                             >
                                 <div className='col-3'>
                                     <img
-                                        src={require('../asserts/images/Nagpathi.jpeg')}
+                                        src={require('../assets/images/Nagpathi.jpeg')}
                                         alt=''
                                     />
                                 </div>
@@ -622,7 +622,7 @@ const AboutUs = () => {
                                             width: '100%',
                                             height: '300px',
                                         }}
-                                        src={require('../asserts/images/skyway_helps_1.jpg')}
+                                        src={require('../assets/images/skyway_helps_1.jpg')}
                                         alt=''
                                     />
                                 </div>
@@ -632,7 +632,7 @@ const AboutUs = () => {
                                             width: '100%',
                                             height: '300px',
                                         }}
-                                        src={require('../asserts/images/skyway_helps_2.jpg')}
+                                        src={require('../assets/images/skyway_helps_2.jpg')}
                                         alt=''
                                     />
                                 </div>
@@ -644,7 +644,7 @@ const AboutUs = () => {
                                             width: '100%',
                                             height: '300px',
                                         }}
-                                        src={require('../asserts/images/skyway_helps_3.jpg')}
+                                        src={require('../assets/images/skyway_helps_3.jpg')}
                                         alt=''
                                     />
                                 </div>
@@ -654,7 +654,7 @@ const AboutUs = () => {
                                             width: '100%',
                                             height: '300px',
                                         }}
-                                        src={require('../asserts/images/skyway_helps_4.jpg')}
+                                        src={require('../assets/images/skyway_helps_4.jpg')}
                                         alt=''
                                     />
                                 </div>
@@ -803,7 +803,7 @@ const AboutUs = () => {
                             </ul>
                             <h3>Music & Arts</h3>
                             <img
-                                src={require('../asserts/images/Socialresp.jpg')}
+                                src={require('../assets/images/Socialresp.jpg')}
                                 alt=''
                             />
                         </div>
@@ -818,11 +818,11 @@ const AboutUs = () => {
                         >
                             <h3>Press Release</h3>
                             <img
-                                src={require('../asserts/images/mountain-callling-02.jpg')}
+                                src={require('../assets/images/mountain-callling-02.jpg')}
                                 alt=''
                             />
                             <img
-                                src={require('../asserts/images/mountain-callling-01.jpg')}
+                                src={require('../assets/images/mountain-callling-01.jpg')}
                                 alt=''
                             />
                             <h4>
@@ -830,17 +830,17 @@ const AboutUs = () => {
                                 Corporate Challange
                             </h4>
                             <img
-                                src={require('../asserts/images/PR1.jpg')}
+                                src={require('../assets/images/PR1.jpg')}
                                 alt=''
                             />
                             <h4>Ms. Poojashree Venkatesh</h4>
                             <img
-                                src={require('../asserts/images/PR2.jpg')}
+                                src={require('../assets/images/PR2.jpg')}
                                 alt=''
                             />
                             <h4>Skyway AITA Tennis in News paper</h4>
                             <img
-                                src={require('../asserts/images/PR3.jpg')}
+                                src={require('../assets/images/PR3.jpg')}
                                 alt=''
                             />
                             <h4>
@@ -848,7 +848,7 @@ const AboutUs = () => {
                                 2011
                             </h4>
                             <img
-                                src={require('../asserts/images/PR4.jpg')}
+                                src={require('../assets/images/PR4.jpg')}
                                 alt=''
                             />
                             <h4>
@@ -856,27 +856,27 @@ const AboutUs = () => {
                                 Magzine
                             </h4>
                             <img
-                                src={require('../asserts/images/PR5.jpg')}
+                                src={require('../assets/images/PR5.jpg')}
                                 alt=''
                             />
                             <h4>Skyway Block Innagruation in Mysore</h4>
                             <img
-                                src={require('../asserts/images/PR6.jpg')}
+                                src={require('../assets/images/PR6.jpg')}
                                 alt=''
                             />
                             <h4>Skyway Mysore Marathon Celebration</h4>
                             <img
-                                src={require('../asserts/images/PR7.jpg')}
+                                src={require('../assets/images/PR7.jpg')}
                                 alt=''
                             />
                             <h4>Skyway Talent Series Tennis Tournament</h4>
                             <img
-                                src={require('../asserts/images/PR8.jpg')}
+                                src={require('../assets/images/PR8.jpg')}
                                 alt=''
                             />
                             <h4>Skyway Tennis</h4>
                             <img
-                                src={require('../asserts/images/PR9.jpg')}
+                                src={require('../assets/images/PR9.jpg')}
                                 alt=''
                             />
                         </div>

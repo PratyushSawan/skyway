@@ -12,7 +12,7 @@ let Brands = () => {
                     <div className='col'>
                         <img
                             style={{ width: '100%' }}
-                            src={require('../asserts/images/brands.png')}
+                            src={require('../assets/images/brands.png')}
                             alt=''
                         />
                     </div>
@@ -20,31 +20,31 @@ let Brands = () => {
                 <div className='row m-3'>
                     <div className='col'>
                         <img
-                            src={require('../asserts/images/incredble_india.png')}
+                            src={require('../assets/images/incredble_india.png')}
                             alt=''
                         />
                     </div>
                     <div className='col'>
                         <img
-                            src={require('../asserts/images/comodo_Secure.png')}
+                            src={require('../assets/images/comodo_Secure.png')}
                             alt=''
                         />
                     </div>
                     <div className='col'>
                         <img
-                            src={require('../asserts/images/india-handbook.png')}
+                            src={require('../assets/images/india-handbook.png')}
                             alt=''
                         />
                     </div>
                     <div className='col'>
                         <img
-                            src={require('../asserts/images/petit_fute.png')}
+                            src={require('../assets/images/petit_fute.png')}
                             alt=''
                         />
                     </div>
                     <div className='col'>
                         <img
-                            src={require('../asserts/images/routard.png')}
+                            src={require('../assets/images/routard.png')}
                             alt=''
                         />
                     </div>
@@ -52,7 +52,7 @@ let Brands = () => {
                         <img
                             width='50'
                             height='50'
-                            src={require('../asserts/images/25logo.jpg')}
+                            src={require('../assets/images/25logo.jpg')}
                             alt=''
                         />
                     </div>

@@ -6,7 +6,7 @@ const VisaAssistance = () => {
     return (
         <SimplePage
             title={'VISA ASSISTANCE'}
-            image={require('../asserts/images/about-india.jpg')}
+            image={require('../assets/images/about-india.jpg')}
         >
             <p>
                 <b>

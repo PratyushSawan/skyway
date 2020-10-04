@@ -2,8 +2,8 @@ import React from 'react';
 import heroStyle from './hero.module.css'
 
 let Hero = () => {
-    return(
-        <div className={heroStyle.hero} style={{backgroundImage: `url(${require('../asserts/images/carlous-img1.jpg')})`}}>
+    return (
+        <div className={heroStyle.hero} style={{ backgroundImage: `url(${require('../assets/images/carlous-img1.jpg')})` }}>
             <div className={heroStyle.overlay}>
                 <div className={heroStyle.content}>
                     <div className={heroStyle.bigTxt}>

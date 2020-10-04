@@ -70,7 +70,7 @@ let Experiences = async () => {
             <Banner
                 heading={data.name}
                 duration={data.duration}
-                image={require('../asserts/images/carlous-img1.jpg')}
+                image={require('../assets/images/carlous-img1.jpg')}
                 places={data.location}
             />
             <BreadcrumComp />
@@ -151,7 +151,7 @@ let Experiences = async () => {
                                         width: '300px',
                                         height: '170px',
                                         marginRight: '10px',
-                                        backgroundImage: `url("${require('../asserts/images/cardback1.jpg')}")`,
+                                        backgroundImage: `url("${require('../assets/images/cardback1.jpg')}")`,
                                         backgroundRepeat: 'no-repeat',
                                         backgroundSize: 'cover',
                                     }}
@@ -162,7 +162,7 @@ let Experiences = async () => {
                                         width: '300px',
                                         height: '170px',
                                         marginRight: '10px',
-                                        backgroundImage: `url("${require('../asserts/images/cardback1.jpg')}")`,
+                                        backgroundImage: `url("${require('../assets/images/cardback1.jpg')}")`,
                                         backgroundRepeat: 'no-repeat',
                                         backgroundSize: 'cover',
                                     }}
@@ -172,7 +172,7 @@ let Experiences = async () => {
                                         width: '300px',
                                         height: '170px',
                                         marginRight: '10px',
-                                        backgroundImage: `url("${require('../asserts/images/cardback1.jpg')}")`,
+                                        backgroundImage: `url("${require('../assets/images/cardback1.jpg')}")`,
                                         backgroundRepeat: 'no-repeat',
                                         backgroundSize: 'cover',
                                     }}
@@ -183,7 +183,7 @@ let Experiences = async () => {
                                         width: '300px',
                                         height: '170px',
                                         marginRight: '10px',
-                                        backgroundImage: `url("${require('../asserts/images/cardback1.jpg')}")`,
+                                        backgroundImage: `url("${require('../assets/images/cardback1.jpg')}")`,
                                         backgroundRepeat: 'no-repeat',
                                         backgroundSize: 'cover',
                                     }}

@@ -149,7 +149,7 @@ const Ayurveda = () => {
                             padding: '10px',
                             height: '250px',
                         }}
-                        src={require('../asserts/images/ban.jpg')}
+                        src={require('../assets/images/ban.jpg')}
                         alt=''
                     />
                 </div>

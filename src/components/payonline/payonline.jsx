@@ -7,7 +7,7 @@ let PayOnline = () => {
     return (
         <div>
             <SimpleBanner
-                image={require('../asserts/images/cardback1.jpg')}
+                image={require('../assets/images/cardback1.jpg')}
                 name={'PAY ONLINE'}
             />
             <BreadcrumComp />

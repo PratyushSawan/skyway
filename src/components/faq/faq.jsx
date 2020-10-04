@@ -4,7 +4,7 @@ import SimplePage from '../layouts/simplePage'
 const FAQPage = () => {
     return (
         <SimplePage
-            image={require('../asserts/images/carlous-img3.jpg')}
+            image={require('../assets/images/carlous-img3.jpg')}
             title={'FAQS'}
         >
             <p>

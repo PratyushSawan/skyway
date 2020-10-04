@@ -20,7 +20,7 @@ const FeedBack = () => {
     return (
         <div>
             <SimpleBanner
-                image={require('../asserts/images/macbook-pro-beside-papers-669619.jpg')}
+                image={require('../assets/images/macbook-pro-beside-papers-669619.jpg')}
                 name={'FEEDBACK'}
             />
             <BreadcrumComp />

@@ -68,7 +68,7 @@ const PayConfirm = () => {
             }}
         >
             <img
-                src={require("../asserts/animated/Pulse-1s-200px.svg")}
+                src={require("../assets/animated/Pulse-1s-200px.svg")}
                 alt=""
             />
         </div>
@@ -155,7 +155,7 @@ const PayConfirm = () => {
                         <h5>Pay via Credit card / Debit card / Netbanking</h5>
                         <h3>Choose payment type : </h3>
                         <img
-                            src={require("../asserts/images/pay.png")}
+                            src={require("../assets/images/pay.png")}
                             alt=""
                             srcSet=""
                         />

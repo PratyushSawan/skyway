@@ -5,7 +5,7 @@ const PressRelease = () => {
     return (
         <SimplePage
             title={'Press Release'}
-            image={require('../asserts/images/carlous-img2.jpg')}
+            image={require('../assets/images/carlous-img2.jpg')}
         >
             <p>
                 IATA Accredited, Active Member of Indian Association of Tour
@@ -25,7 +25,7 @@ const PressRelease = () => {
             <hr />
             <h5>BEST MARKETING INNOVATION AWARD 2019 FROM IATO</h5>
             <img
-                src={require('../asserts/images/IATO-award-photo-2019.jpg')}
+                src={require('../assets/images/IATO-award-photo-2019.jpg')}
                 alt=''
                 style={{
                     width: '100%',
@@ -92,7 +92,7 @@ const PressRelease = () => {
             <h5>FKCCI KARNATAKA TOURISM AWARDS 2018</h5>
 
             <img
-                src={require('../asserts/images/fkcci-award-pic.jpg')}
+                src={require('../assets/images/fkcci-award-pic.jpg')}
                 alt=''
                 style={{
                     width: '100%',
@@ -121,7 +121,7 @@ const PressRelease = () => {
                 CATEGORY”
             </p>
             <img
-                src={require('../asserts/images/inv-award-pic.jpg')}
+                src={require('../assets/images/inv-award-pic.jpg')}
                 alt=''
                 style={{
                     width: '100%',
@@ -179,33 +179,33 @@ const PressRelease = () => {
             </p>
             <hr />
             <img
-                src={require('../asserts/images/mountain-callling-02.jpg')}
+                src={require('../assets/images/mountain-callling-02.jpg')}
                 alt=''
             />
             <img
-                src={require('../asserts/images/mountain-callling-01.jpg')}
+                src={require('../assets/images/mountain-callling-01.jpg')}
                 alt=''
             />
             <h4>
                 Skyway co-sponsorers the Mountain Biking Corporate Challange
             </h4>
-            <img src={require('../asserts/images/PR1.jpg')} alt='' />
+            <img src={require('../assets/images/PR1.jpg')} alt='' />
             <h4>Ms. Poojashree Venkatesh</h4>
-            <img src={require('../asserts/images/PR2.jpg')} alt='' />
+            <img src={require('../assets/images/PR2.jpg')} alt='' />
             <h4>Skyway AITA Tennis in News paper</h4>
-            <img src={require('../asserts/images/PR3.jpg')} alt='' />
+            <img src={require('../assets/images/PR3.jpg')} alt='' />
             <h4>Skyway Block - Library Inauguration 29th July 2011</h4>
-            <img src={require('../asserts/images/PR4.jpg')} alt='' />
+            <img src={require('../assets/images/PR4.jpg')} alt='' />
             <h4>Skyway Block Inagraul News in Incredible India Magzine</h4>
-            <img src={require('../asserts/images/PR5.jpg')} alt='' />
+            <img src={require('../assets/images/PR5.jpg')} alt='' />
             <h4>Skyway Block Innagruation in Mysore</h4>
-            <img src={require('../asserts/images/PR6.jpg')} alt='' />
+            <img src={require('../assets/images/PR6.jpg')} alt='' />
             <h4>Skyway Mysore Marathon Celebration</h4>
-            <img src={require('../asserts/images/PR7.jpg')} alt='' />
+            <img src={require('../assets/images/PR7.jpg')} alt='' />
             <h4>Skyway Talent Series Tennis Tournament</h4>
-            <img src={require('../asserts/images/PR8.jpg')} alt='' />
+            <img src={require('../assets/images/PR8.jpg')} alt='' />
             <h4>Skyway Tennis</h4>
-            <img src={require('../asserts/images/PR9.jpg')} alt='' />
+            <img src={require('../assets/images/PR9.jpg')} alt='' />
         </SimplePage>
     )
 }

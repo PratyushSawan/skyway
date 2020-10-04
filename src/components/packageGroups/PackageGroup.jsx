@@ -100,7 +100,7 @@ let PackageGroup = () => {
         let noResult = true;
         if (fl.price) {
             flPkgs = bkupPkg.filter((pkg) => {
-                return Number(bkupPkg.priceStartsAt) >= Number(fl.price) ? pkg : null
+                return Number(bkupPkg.priceStartsAt) <= Number(fl.price) ? pkg : null
             })
             noResult = flPkgs.length ? false : true
         } else {
@@ -113,12 +113,9 @@ let PackageGroup = () => {
                 return places.includes(fl.location.trim().toLowerCase()) ? pkg : null
             })
             noResult = flPkgs.length ? false : true
-        } else {
-            flPkgs = bkupPkg;
         }
 
         setpkgs(flPkgs);
-
 
         let message = "";
         for (const filter in filterOptions) {

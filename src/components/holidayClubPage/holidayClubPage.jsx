@@ -5,9 +5,9 @@ const HolidayClubPage = () => {
     return (
         <SimplePage
             title={'HOLIDAY CLUB'}
-            image={require('../asserts/images/carlous-img2.jpg')}
+            image={require('../assets/images/carlous-img2.jpg')}
         >
-            <img src={require('../asserts/images/club1.jpg')} alt='' />
+            <img src={require('../assets/images/club1.jpg')} alt='' />
             <p>
                 We are in travel business for the last 23 years. We have
                 Registered office in Mysore, Head Office in Bangalore and

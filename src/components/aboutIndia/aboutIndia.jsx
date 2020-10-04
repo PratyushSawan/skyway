@@ -6,7 +6,7 @@ let AboutIndia = () => {
     return (
         <SimplePage
             title={'ABOUT INDIA'}
-            image={require('../asserts/images/about-india.jpg')}
+            image={require('../assets/images/about-india.jpg')}
         >
             <p>
                 India is the seventh largest country in the world. The country's
@@ -23,7 +23,7 @@ let AboutIndia = () => {
                         appellation for the river Indus.
                     </p>
                     <img
-                        src={require('../asserts/images/about-india.jpg')}
+                        src={require('../assets/images/about-india.jpg')}
                         alt={''}
                     />
                 </Tab>
@@ -187,7 +187,7 @@ let AboutIndia = () => {
                 </Tab>
                 <Tab eventKey='contact' title='India Map'>
                     <img
-                        src={require('../asserts/images/india-map.jpg')}
+                        src={require('../assets/images/india-map.jpg')}
                         alt=''
                     />
                 </Tab>
