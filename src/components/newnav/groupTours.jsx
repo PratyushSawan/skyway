@@ -16,8 +16,8 @@ const ToursNav = () => {
                 boxShadow: '1px 1px 15px #555',
             }}
         >
-            <Link to={'/'} style={sty}> India tours </Link>
-            <Link to={'/'} style={sty}>Foreign tours</Link>
+            <Link to={'https://grouptour.skywaytour.com/searchByType/TOUR_TAGS/India%20Tours'} style={sty}> India tours </Link>
+            <Link to={'https://grouptour.skywaytour.com/searchByType/TOUR_TAGS/Foreign%20Tours'} style={sty}>Foreign tours</Link>
         </div>
     )
 }

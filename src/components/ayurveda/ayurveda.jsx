@@ -17,7 +17,7 @@ const Ayurveda = () => {
     const [loading, setloading] = useState(true)
 
     async function packagesList() {
-        const data = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
+        const data = await axios.get("https://skyway-server.herokuapp.com//api/v1/packages/getAllPackages")
         let pkgs = data.data.map((pkg) => {
             return ("AYURVEDA RESORTS / PACKAGES" === pkg.category[1]) ? pkg : null
         })
