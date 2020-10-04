@@ -6,11 +6,12 @@ import { useParams, useHistory } from 'react-router-dom'
 import { Form } from 'react-bootstrap'
 import axios from 'axios'
 import CustomCard from './CustomCard';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 let PackageGroup = () => {
 
     const [pkgs, setpkgs] = useState([])
-    const [bannerIMG, setBannerIMG] = useState("")
     const [loading, setLoading] = useState(true)
     const [found, setFound] = useState(false)
 
@@ -24,6 +25,7 @@ let PackageGroup = () => {
         setLoading(true)
         setFound(false)
         setpkgs([])
+        setBkupPkg([])
     })
 
     async function packagesList() {
@@ -34,8 +36,7 @@ let PackageGroup = () => {
             }, 750);
         }
         else if (category && subgroup) {
-            console.log("entereed---------------");
-            const data = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
+            const data = await axios.get("http://localhost:4545/api/v1/packages/getAllPackages")
             if (data.data && data.data.length) {
                 let allpkgs = data.data;
                 let temppkgs = [];
@@ -47,17 +48,19 @@ let PackageGroup = () => {
                 })
                 if (temppkgs.length) {
                     setpkgs(temppkgs);
+                    setBkupPkg(temppkgs)
                     setFound(true);
                     setLoading(false)
                 }
                 else {
                     setFound(false)
                     setpkgs([])
+                    setBkupPkg([])
                     setLoading(false)
                 }
             }
         } else {
-            const data = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
+            const data = await axios.get("http://localhost:4545/api/v1/packages/getAllPackages")
             if (data.data && data.data.length) {
                 let allpkgs = data.data;
                 let temppkgs = [];
@@ -70,12 +73,14 @@ let PackageGroup = () => {
                 })
                 if (temppkgs.length) {
                     setpkgs(temppkgs);
+                    setBkupPkg(temppkgs)
                     setFound(true);
                     setLoading(false)
                 }
                 else {
                     setFound(false)
                     setpkgs([])
+                    setBkupPkg([])
                     setLoading(false)
                 }
             }
@@ -83,13 +88,71 @@ let PackageGroup = () => {
     }
 
     useEffect(() => {
-        console.log(pkgs, category, groupId, subgroup);
         packagesList()
-        if (found && pkgs) {
-            setBannerIMG(pkgs[0].imageUrl)
-        }
-    }, [])
+    }, [groupId, category, subgroup])
 
+    const [filterOptions, setFilterOptions] = useState({ price: '', location: "" })
+    const [bkupPkg, setBkupPkg] = useState([])
+
+    async function filter() {
+        let fl = filterOptions;
+        let flPkgs;
+        let noResult = true;
+        if (fl.price) {
+            flPkgs = bkupPkg.filter((pkg) => {
+                return Number(bkupPkg.priceStartsAt) >= Number(fl.price) ? pkg : null
+            })
+            noResult = flPkgs.length ? false : true
+        } else {
+            flPkgs = bkupPkg;
+        }
+        if (fl.location) {
+            flPkgs = flPkgs.filter((pkg) => {
+                let places = pkg.place.split('/')
+                places = places.map(place => { return place.trim().toLowerCase() })
+                return places.includes(fl.location.trim().toLowerCase()) ? pkg : null
+            })
+            noResult = flPkgs.length ? false : true
+        } else {
+            flPkgs = bkupPkg;
+        }
+
+        setpkgs(flPkgs);
+
+
+        let message = "";
+        for (const filter in filterOptions) {
+            if (filterOptions.hasOwnProperty(filter)) {
+                const value = filterOptions[filter];
+                if (value) {
+                    message += filter + ": " + value + "/";
+                }
+            }
+        }
+        if (message) {
+            if (noResult) {
+                message = message.split("/").reverse()
+                message.shift()
+                message = "No packages found for the filter(s): \n  " + message.join("\n  ")
+                toastAlert(message, "info", 5000)
+            }
+        } else {
+            toastAlert("No filter options were entered", "error", 2500)
+        }
+
+    }
+
+    function toastAlert(msg, type, autoClose) {
+        toast(msg, {
+            position: "top-center",
+            autoClose,
+            type,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+        })
+    }
     return (
         <div>
             {loading ?
@@ -106,13 +169,13 @@ let PackageGroup = () => {
                 :
                 found ?
                     <div >
-                        {bannerIMG ?
-                            <SimpleBanner
-                                image={
-                                    bannerIMG
-                                }
-                                name={subgroup ? subgroup.toUpperCase() + " TOURS" : groupId.toUpperCase() + " TOURS"}
-                            /> : null}
+                        <ToastContainer />
+                        <SimpleBanner
+                            image={
+                                bkupPkg[0].galleryImagesUrls[0]
+                            }
+                            name={subgroup ? subgroup.toUpperCase() + " TOURS" : groupId.toUpperCase() + " TOURS"}
+                        />
 
                         <BreadcrumComp category="HOLIDAY" tourName={subgroup ? subgroup.toUpperCase() : groupId.toUpperCase()} />
                         <div className='container'>
@@ -142,14 +205,17 @@ let PackageGroup = () => {
                                                 width: '100%',
                                             }}
                                         >
-                                            <h4>Filter</h4>
-                                            <h5>LOCATION</h5>
-                                            <Form.Group controlId='exampleForm.ControlTextarea1'>
-                                                <Form.Control as='textarea' />
-                                            </Form.Group>
-                                            <button className={'btn btn-primary'}>
-                                                Submit
-                                    </button>
+                                            <form onSubmit={e => e.preventDefault()}>
+                                                <h4 className="py-1">Filter</h4>
+                                                <h5 className="py-1">LOCATION</h5>
+                                                <input value={filterOptions.location} className="form-control" type="text" onChange={(e) => setFilterOptions({ ...filterOptions, location: e.target.value })} />
+                                                <h5 className="py-1">PRICE <small> <i>(in INR)</i> </small></h5>
+                                                <input className="form-control" type="number" value={filterOptions.price} onChange={(e) => setFilterOptions({ ...filterOptions, price: e.target.value })} />
+                                                <button onClick={(e) => { e.preventDefault(); filter() }} className="my-2 btn btn-primary">
+                                                    Submit
+                                                </button>
+                                            </form>
+                                            <br />
                                             <h5>TYPE</h5>
                                             <Form.Check
                                                 type={'checkbox'}
@@ -184,7 +250,7 @@ let PackageGroup = () => {
                                                 fontSize: '14pt',
                                             }}
                                         >
-                                            Packages found (0)
+                                            Packages found ({pkgs.length})
                                 </div>
                                         <div
                                             style={{

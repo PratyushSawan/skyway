@@ -6,7 +6,7 @@ const ExNav = () => {
 
     const [experiences, setExperiences] = useState([])
     async function packagesList() {
-        const res = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
+        const res = await axios.get("http://localhost:4545/api/v1/packages/getAllPackages")
 
         setExperiences(res.data.filter((pkg) => {
             return ((pkg.category[0].toUpperCase() === "EXPERIENCES" && !pkg.category[1]) ? pkg : null)

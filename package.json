@@ -30,6 +30,7 @@
     "react-scrollspy": "^3.4.2",
     "react-scrollspy-nav": "^1.2.4",
     "react-sticky-el": "^2.0.5",
+    "react-toastify": "^6.0.8",
     "redux": "^4.0.5",
     "serve": "^11.3.2"
   },
@@ -57,7 +58,7 @@
     ]
   },
   "devDependencies": {
-    "firebase": "^7.20.0",
+    "firebase": "^7.22.0",
     "prettier": "^2.0.5"
   }
 }

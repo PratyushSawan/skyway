@@ -36,7 +36,6 @@ import ThingsToKnow from './components/thingsToKnow/thingsToKnow'
 import TermsAndCondition from './components/termscondition/termscondition'
 import BookingCondition from './components/bookingConditions/bookingCondition'
 import PackageGroup from './components/packageGroups/PackageGroup'
-import GroupTour from "./components/groupTours";
 import ForeignTouristsGroup from './components/foreignTouristsGroup'
 
 function App() {
@@ -86,8 +85,6 @@ function App() {
                 <Route exact path={'/experiences/weekend-gateways'} render={(props) => <Experiences {...props} tourName={`WEEKEND GETAWAYS`} />} /> />
                 {/*  */}
                 <Route exact path={'/jungle'} component={Jungle} />
-                <Route exact path={'/grouptours/foreigntours'} render={(props) => <GroupTour {...props} tourName={`Foreign Tours`} />} /> />
-                <Route exact path={'/grouptours/indiatours'} render={(props) => <GroupTour {...props} tourName={`India Tours`} />} /> />
                 <Route exact path={'/aboutus'} component={AboutUs} />
                 <Route exact path={'/career'} component={Career} />
                 <Route exact path={'/contact'} component={Contact} />

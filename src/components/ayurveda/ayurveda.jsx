@@ -14,25 +14,21 @@ import ReactHtmlParser from 'react-html-parser';
 const Ayurveda = () => {
 
     const [pkgs, setpkgs] = useState([])
+    const [loading, setloading] = useState(true)
+
     async function packagesList() {
-        const data = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
+        const data = await axios.get("http://localhost:4545/api/v1/packages/getAllPackages")
         let pkgs = data.data.map((pkg) => {
-            return (pkg.category[0].toLowerCase() === "experiences" && "AYURVEDA RESORTS / PACKAGES" === pkg.category[1]) ? pkg : null
+            return ("AYURVEDA RESORTS / PACKAGES" === pkg.category[1]) ? pkg : null
         })
-        console.log(pkgs.filter(x => x));
         setpkgs(pkgs.filter(x => x))
+        setloading(false);
     }
 
     useEffect(() => {
-        if (loading) {
-            packagesList()
-        }
-        if (pkgs && pkgs.length) {
-            setloading(false);
-        }
-    }, [pkgs])
+        packagesList()
+    }, [])
 
-    const [loading, setloading] = useState(true)
     const LOADER = <div className='text-center align-content-center justify-content-center'><img width="500px" src={require("./loader.gif")} alt="" srcSet="" /></div>
 
     let CustomCard = ({ name, place, dec, image, pkgcode }) => {

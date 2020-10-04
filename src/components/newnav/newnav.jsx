@@ -27,7 +27,7 @@ const NewNav = () => {
 
     const [pkgs, setpkgs] = useState([])
     function packagesList() {
-        axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
+        axios.get("http://localhost:4545/api/v1/packages/getAllPackages")
             .then((res) => {
                 setpkgs(res.data)
             }).catch((err) => {

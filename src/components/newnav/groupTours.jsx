@@ -16,8 +16,8 @@ const ToursNav = () => {
                 boxShadow: '1px 1px 15px #555',
             }}
         >
-            <Link to={'/grouptours/indiatours'} style={sty}> India tours </Link>
-            <Link to={'/grouptours/foreigntours'} style={sty}>Foreign tours</Link>
+            <Link to={'/'} style={sty}> India tours </Link>
+            <Link to={'/'} style={sty}>Foreign tours</Link>
         </div>
     )
 }
