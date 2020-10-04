@@ -36,7 +36,7 @@ let PackageGroup = () => {
             }, 750);
         }
         else if (category && subgroup) {
-            const data = await axios.get("http://localhost:4545/api/v1/packages/getAllPackages")
+            const data = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
             if (data.data && data.data.length) {
                 let allpkgs = data.data;
                 let temppkgs = [];
@@ -60,7 +60,7 @@ let PackageGroup = () => {
                 }
             }
         } else {
-            const data = await axios.get("http://localhost:4545/api/v1/packages/getAllPackages")
+            const data = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
             if (data.data && data.data.length) {
                 let allpkgs = data.data;
                 let temppkgs = [];

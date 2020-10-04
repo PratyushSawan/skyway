@@ -27,7 +27,7 @@ const NewNav = () => {
 
     const [pkgs, setpkgs] = useState([])
     async function packagesList() {
-        const Res = await axios.get("http://localhost:4545/api/v1/packages/getAllPackages")
+        const Res = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
         setpkgs(Res.data.filter((pkg) => {
             return ((pkg.category[1].toUpperCase() === "Discover India Tours for Foreign tourists visiting India".toUpperCase()) ? pkg : null)
         }))
