@@ -20,7 +20,7 @@ const EmailSub = () => {
         }
         const mailregexp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         if (email.match(mailregexp)) {
-            let res = await axios.post("https://skyway-server.herokuapp.com//api/v1/email/findOne/" + email)
+            let res = await axios.post("https://skyway-server.herokuapp.com/api/v1/email/findOne/" + email)
             toastAlert(res.data.message, res.data.type)
         } else {
             toastAlert(<p style={{ fontSize: "1.25em" }}>"Please enter a valid email!</p>, "error")
