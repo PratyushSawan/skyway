@@ -81,7 +81,7 @@ let BookNow = () => {
         try {
             let totalAmount = adultsPrice + childrenAb6Price + childrenBe6Price
             let res = await fetch(
-                'https://skyway-server.herokuapp.com/api/v1/booking/bookPackage',
+                'http://localhost:4545/api/v1/booking/bookPackage',
                 {
                     method: 'POST',
                     body: JSON.stringify({
@@ -110,7 +110,7 @@ let BookNow = () => {
     }
 
     useEffect(() => {
-        fetch(`https://skyway-server.herokuapp.com/api/v1/packages/getPackage/${pacId}`)
+        fetch(`http://localhost:4545/api/v1/packages/getPackage/${pacId}`)
             .then((res) => {
                 return res.json()
             })

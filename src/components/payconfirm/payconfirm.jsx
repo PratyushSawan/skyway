@@ -26,7 +26,7 @@ const PayConfirm = () => {
 
     let fetchBookingInfo = async () => {
         fetch(
-            `https://skyway-server.herokuapp.com/api/v1/booking/getBookingInfo/${bookingId}`
+            `http://localhost:4545/api/v1/booking/getBookingInfo/${bookingId}`
         )
             .then((res) => {
                 return res.json();
@@ -38,7 +38,7 @@ const PayConfirm = () => {
     };
 
     let fetchPackageDetail = async (packageId) => {
-        fetch(`https://skyway-server.herokuapp.com/api/v1/packages/getPackage/${packageId}`)
+        fetch(`http://localhost:4545/api/v1/packages/getPackage/${packageId}`)
             .then((res) => {
                 return res.json();
             })
