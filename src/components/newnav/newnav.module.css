@@ -2,38 +2,60 @@
     background-color: white;
     width: fit-content;
     display: flex;
-    height: 500px;
-    padding: 10px;
+    height: 32rem;
+    /* padding: 1rem 0; */
+    box-shadow: 1px 1px 15px #666;
+}
+
+
+.navSec {
+    color: white;
+    /*  */
+    /* margin: 4rem; */
+}
+
+.border-right {
+    border-right: lightgray .2rem solid;
 }
 
 .newnav div b {
-    color: blue;
+    color: #3E4094;
+    font-family: 'Montserrat';
+    border-bottom: lightgray .1rem solid;
+    font-size: .9rem;
+    margin: 1rem 0;
 }
 
 .newnav div a {
-    color: blue;
+    color: #3E4094;
+    font-size: .8rem;
+    font-family: 'Montserrat';
+    font-weight: 500;
+
 }
 
-.newnav div img {
+.newnav>div>img {
     width: 100%;
 }
 
 .newnav div {
-    margin-right: 30px;
+    padding-right: .6rem;
+    padding-left: .6rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .newnav div div {
-    width: 200px;
+    width: 215px;
     text-align: left;
     color: black;
 }
 
 .newnav div div a {
-    color: black;
-    padding: 2px;
+    color: rgb(35, 35, 36);
+    padding: 0px;
+    margin: 0;
 }
 
 .accordion {
@@ -57,4 +79,8 @@
 
 #holidays-international {
     background: red !important;
+}
+
+.push_bottom {
+    margin-bottom: 6rem;
 }

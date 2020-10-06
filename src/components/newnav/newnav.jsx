@@ -24,28 +24,55 @@ const NewNav = () => {
         }
     }
 
-
     const [pkgs, setpkgs] = useState([])
+    const [loading, setLoading] = useState(true)
     async function packagesList() {
-        const Res = await axios.get("http://localhost:4545/api/v1/packages/getAllPackages")
+        const Res = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
         setpkgs(Res.data.filter((pkg) => {
             return ((pkg.category[1].toUpperCase() === "Discover India Tours for Foreign tourists visiting India".toUpperCase()) ? pkg : null)
         }))
+        setLoading(false)
     }
 
     useEffect(() => {
         packagesList()
     }, [])
 
+    let LoadingJSX = (
+        <div
+            style={{
+                width: 'auto',
+                height: '100px',
+                display: 'flex',
+                backgroundColor: '#f1f2f3',
+                justifyContent: 'center',
+            }}
+        >
+            <img
+                style={{
+                    width: 'auto',
+                    height: '100px',
+                    display: 'flex',
+                    backgroundColor: '#f1f2f3',
+                    justifyContent: 'center',
+                }}
+                src={require('../assets/animated/Pulse-1s-200px.svg')}
+                alt=''
+            />
+        </div>)
+
+    console.log(loading);
+
+
     return (
 
         <div className={style.newnav}>
-            <div>
-                <b>Discover India Tours for Foreign tourist's visiting India</b>
-                {pkgs && pkgs.length ?
-                    <div>
-                        {
-                            pkgs.map((pkg, i) => {
+            <div className="navSec border-right">
+                <div>
+                    <b>Discover India Tours for Foreign tourist's visiting India</b>
+                    {loading ? LoadingJSX : pkgs && pkgs.length ?
+                        <div>
+                            {pkgs.map((pkg, i) => {
                                 return i < 6 ? (
 
                                     <a className="pb-2" href={'/packages/' + (pkg.pkgcode)} key={pkg.pkgcode}>
@@ -53,45 +80,49 @@ const NewNav = () => {
                                     </a>
                                 ) : null
                             })}
-                    </div>
-                    : <p>No Packages in This Group Yet!</p>}
-                <a href="/holidays/Tours-for-Foreign-tourists" style={{ color: 'blue' }}>See More</a>
-                <img src={require('../assets/images/taj.png')} alt='' />
+                        </div>
+                        : <p>No Packages in This Group Yet!</p>}
+                </div>
+                <a href="/holidays/Tours-for-Foreign-tourists" style={{ color: ' #3E4094' }}>See More</a>
+                <img className="push_bottom" src={require('../assets/images/taj.png')} alt='' />
+                <div></div>
             </div>
-            <div>
-                <b>India Tours for indian tourists to travel within India</b>
+            <div className="nav-sec border-right">
                 <div>
-                    <a href={"/holidays/travel-within-india/Central-India"}>Central India</a>
-                </div>
-                <div>
-                    <a href={'/holidays/travel-within-india/East-India'}>East India</a>
-                </div>
-                <div>
-                    <a href={'/holidays/travel-within-india/North-India'}>North India</a>
-                </div>
-                <div>
-                    <a href={'/holidays/travel-within-india/South-India'}>South India</a>
-                </div>
-                <div>
-                    <a href={'/holidays/travel-within-india/West-India'}>West India</a>
-                </div>
+                    <b>India Tours for indian tourists to travel within India</b>
+                    <div>
+                        <a className="pb-2" href={"/holidays/travel-within-india/Central-India"}>Central India</a>
+                    </div>
+                    <div>
+                        <a className="pb-2" href={'/holidays/travel-within-india/East-India'}>East India</a>
+                    </div>
+                    <div>
+                        <a className="pb-2" href={'/holidays/travel-within-india/North-India'}>North India</a>
+                    </div>
+                    <div>
+                        <a className="pb-2" href={'/holidays/travel-within-india/South-India'}>South India</a>
+                    </div>
+                    <div>
+                        <a className="pb-2" href={'/holidays/travel-within-india/West-India'}>West India</a>
+                    </div>
 
-                <b>Honeymoon Packages</b>
-                <div>
-                    <a href={'/holidays/Honeymoon-Packages/India'}>India</a>
-                </div>
-                <div>
-                    <a href={'/holidays/Honeymoon-Packages/International'}>International</a>
+                    <b>Honeymoon Packages</b>
+                    <div>
+                        <a className="pb-2" href={'/holidays/Honeymoon-Packages/India'}>India</a>
+                    </div>
+                    <div>
+                        <a className="pb-2" href={'/holidays/Honeymoon-Packages/International'}>International</a>
+                    </div>
                 </div>
                 <img src={require('../assets/images/menu2.png')} alt='' />
             </div>
-            <div>
-                <span style={{ width: "auto", background: 'white' }}>
+            <div className="nav-sec border-right">
+                <div style={{ width: "auto", background: 'white' }}>
                     <b>International</b>
-                    <div className="pb-2" onClick={() => {
+                    <div onClick={() => {
                         slideAccordion(1)
                     }}>
-                        <button className={style.accordion}>Asia <FaAngleDoubleDown /></button>
+                        <button className={style.accordion}><a className="pb-2">Asia <FaAngleDoubleDown /></a></button>
                         <div className={accordionPanelClass1} style={{
                             maxHeight: 0,
                             paddingLeft: "10px",
@@ -112,10 +143,10 @@ const NewNav = () => {
                             <a className="pb-2" href='/holidays/International/Asia/Vietnam'>Vietnam</a>
                         </div>
                     </div>
-                    <div className="pb-2" onClick={() => {
+                    <div onClick={() => {
                         slideAccordion(2)
                     }}>
-                        <button className={style.accordion}>Africa <FaAngleDoubleDown /></button>
+                        <button className="pb-2" className={style.accordion}><a className="pb-2">Africa <FaAngleDoubleDown /></a></button>
                         <div className={accordionPanelClass2} style={{
                             maxHeight: 0,
                             paddingLeft: "10px",
@@ -127,40 +158,40 @@ const NewNav = () => {
                             <a className="pb-2" href='/holidays/International/Africa/South-Africa'>South Africa</a>
                         </div>
                     </div>
-                    <div className="pb-2">
-                        <a href='/holidays/International/Australia-and-New-zealand'>Australia & New Zealand</a>
+                    <div>
+                        <a className="pb-2" href='/holidays/International/Australia-and-New-zealand'>Australia & New Zealand</a>
                     </div>
-                    <div className="pb-2">
-                        <a href='/holidays/International/Europe'>Europe</a>
+                    <div>
+                        <a className="pb-2" href='/holidays/International/Europe'>Europe</a>
                     </div>
-                    <div className="pb-2">
-                        <a href='/holidays/International/North-and-south-america'>North and south america</a>
+                    <div >
+                        <a className="pb-2" href='/holidays/International/North-and-south-america'>North and south america</a>
                     </div>
-                    <div className="pb-2">
-                        <a href='/holidays/International/Honeymoon-Packages'>Honeymoon Packages</a>
+                    <div >
+                        <a className="pb-2" href='/holidays/International/Honeymoon-Packages'>Honeymoon Packages</a>
                     </div>
-                </span>
+                </div>
                 <img src={require('../assets/images/menu3.png')} alt='' />
             </div >
-            <div>
-                <span>
+            <div className="nav-sec">
+                <div>
                     <b>Destination</b>
                     <div>
-                        <a href='/holidays/Destination/Karnataka-Tours'>Karnataka Tours</a>
+                        <a className="pb-2" href='/holidays/Destination/Karnataka-Tours'>Karnataka Tours</a>
                     </div>
                     <div>
-                        <a href='/holidays/Destination/Kerala-Tours'>Kerala Tours</a>
+                        <a className="pb-2" href='/holidays/Destination/Kerala-Tours'>Kerala Tours</a>
                     </div>
                     <div>
-                        <a href='/holidays/Destination/Weekend-Gateways'>Weekend Gateways</a>
+                        <a className="pb-2" href='/holidays/Destination/Weekend-Gateways'>Weekend Gateways</a>
                     </div>
                     <div>
-                        <a href='/holidays/Destination/City-Breaks'>City Breaks</a>
+                        <a className="pb-2" href='/holidays/Destination/City-Breaks'>City Breaks</a>
                     </div>
                     <div>
-                        <a href='/holidays/Destination/Coach-Tours'>Coach Tours</a>
+                        <a className="pb-2" href='/holidays/Destination/Coach-Tours'>Coach Tours</a>
                     </div>
-                </span>
+                </div>
                 <img src={require('../assets/images/menu5.png')} alt='' />
             </div>
         </div >

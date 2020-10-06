@@ -5,6 +5,7 @@ import style from './package.module.css'
 import ScrollspyNav from 'react-scrollspy-nav'
 import { Table } from 'react-bootstrap'
 import { Steps } from 'antd'
+import Lightbox from 'react-image-lightbox'
 
 import {
     FaArrowRight,
@@ -23,9 +24,9 @@ import BreadcrumComp from '../breadcrum/breadcrum'
 import Banner from '../banner/banner'
 import EmailSub from '../emailsub/emailsub'
 import Brands from '../brands/brands'
-import Lightbox from 'react-image-lightbox'
 import 'react-image-lightbox/style.css'
 import { Helmet } from "react-helmet";
+
 
 const { Step } = Steps
 
@@ -47,7 +48,7 @@ let Packages = () => {
             }}
         >
             <img
-                src={require('../assets/animated/Pulse-1s-200px.svg')}
+                src={require('../asserts/animated/Pulse-1s-200px.svg')}
                 alt=''
             />
         </div>
@@ -55,41 +56,17 @@ let Packages = () => {
 
     let history = useHistory()
 
-    let makeSidebarSticky = () => {
-        window.scrollTo(0, 0)
-
-        window.onscroll = (e) => {
-            let sidebar = document.getElementById('sidebar')
-            if (sidebar !== null) {
-                if (window.scrollY > 620) {
-                    sidebar.style.top = '0px'
-                    sidebar.style.width = '16.66%'
-                    sidebar.style.position = 'fixed'
-                    document.getElementById('btns').hidden = false
-                } else {
-                    sidebar.style.position = 'relative'
-                    sidebar.style.width = '100%'
-                    document.getElementById('btns').hidden = true
-                }
-
-                if (window.scrollY > document.body.scrollHeight - 1100) {
-                    //sidebar.style.marginTop = '6500px'
-                }
-            }
-        }
-    }
-
     useEffect(() => {
         //Fetching the packages
-        fetch(`http://localhost:4545/api/v1/packages/getPackage/${packageId}`)
+        fetch(`https://skyway-server.herokuapp.com/api/v1/packages/getPackage/${packageId}`)
             .then((res) => {
                 return res.json()
             })
             .then((data) => {
                 setPackageDetails(data)
             })
-        //scrollFix
-        makeSidebarSticky()
+
+
     }, [])
 
     let hasCost = (pricing, cost) => {
@@ -121,6 +98,7 @@ let Packages = () => {
         }
     }
 
+
     return packageDetails.length === 0 ? (
         LoadingJSX
     ) : (
@@ -149,68 +127,70 @@ let Packages = () => {
                             className={'col-md-2'}
                         >
                             <div id={'sidebar'} className={style.sideBar}>
-                                <ScrollspyNav
-                                    scrollTargetIds={[
-                                        'section_1',
-                                        'section_2',
-                                        'section_3',
-                                        'section_4',
-                                        'section_5',
-                                        'section_6',
-                                        'section_7',
-                                    ]}
-                                    duration={'500'}
-                                    offset={200}
-                                    activeNavClass={style.currentlyActive}
-                                >
-                                    <ul>
-                                        <li>
-                                            <a href='#section_1'>
-                                                <FaBook />
+                                <div>
+                                    <ScrollspyNav
+                                        scrollTargetIds={[
+                                            'section_1',
+                                            'section_2',
+                                            'section_3',
+                                            'section_4',
+                                            'section_5',
+                                            'section_6',
+                                            'section_7',
+                                        ]}
+                                        duration={'500'}
+                                        offset={200}
+                                        activeNavClass={style.currentlyActive}
+                                    >
+                                        <ul>
+                                            <li>
+                                                <a href='#section_1'>
+                                                    <FaBook />
                                             Overview
                                         </a>
-                                        </li>
-                                        <li>
-                                            <a href='#section_2'>
-                                                <FaPhotoVideo /> Gallery
+                                            </li>
+                                            <li>
+                                                <a href='#section_2'>
+                                                    <FaPhotoVideo /> Gallery
                                         </a>
-                                        </li>
-                                        <li>
-                                            <a href='#section_3'>
-                                                <FaMoneyBill />
+                                            </li>
+                                            <li>
+                                                <a href='#section_3'>
+                                                    <FaMoneyBill />
                                             Pricing
                                         </a>
-                                        </li>
-                                        <li>
-                                            <a href='#section_4'>
-                                                <FaEvernote />
+                                            </li>
+                                            <li>
+                                                <a href='#section_4'>
+                                                    <FaEvernote />
                                             Include Exclude
                                         </a>
-                                        </li>
-                                        <li>
-                                            <a href='#section_5'>
-                                                <FaHotel />
+                                            </li>
+                                            <li>
+                                                <a href='#section_5'>
+                                                    <FaHotel />
                                             Itinerary
                                         </a>
-                                        </li>
+                                            </li>
 
-                                        <li>
-                                            <a href='#section_6'>
-                                                <FaHotel />
+                                            <li>
+                                                <a href='#section_6'>
+                                                    <FaHotel />
                                             Hotels
                                         </a>
-                                        </li>
-                                        <li>
-                                            <a href='#section_7'>
-                                                <FaStickyNote />
+                                            </li>
+                                            <li>
+                                                <a href='#section_7'>
+                                                    <FaStickyNote />
                                             Description
                                         </a>
-                                        </li>
-                                    </ul>
-                                </ScrollspyNav>
+                                            </li>
+                                        </ul>
+                                    </ScrollspyNav>
+                                </div>
                             </div>
                         </div>
-                        <div style={{ backgroundColor: '#fafafa' }} className='col-md-10' >
+                        <div style={{ backgroundColor: '#fafafa' }} className='col-md-10'>
                             <CompBanner pkgname={packageDetails.packageName} places={packageDetails.place} duration={packageDetails.duration} />
 
                             <div id={'section_1'}>
@@ -524,11 +504,13 @@ let Packages = () => {
                                     <Table striped bordered hover>
                                         <thead>
                                             <tr>
+
                                                 <th>Place</th>
                                                 <th>Standard</th>
                                                 <th>Deluxe</th>
                                                 <th>Luxury</th>
                                             </tr>
+
                                         </thead>
                                         <tbody>
                                             {packageDetails.hotels ? (

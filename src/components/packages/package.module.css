@@ -3,7 +3,11 @@
     width: 100%;
     height: 100vh;
     position: relative;
-    z-index: -1;
+    /* z-index: -1; */
+
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
 
 .sideBar ul {
@@ -18,6 +22,7 @@
     color: white;
     font-size: 13pt;
 }
+
 .sideBar ul li a svg {
     margin: 0 10px 0 20px;
 }
@@ -26,13 +31,13 @@
     background-color: rgb(79, 104, 243);
 }
 
-.bookNowBtn{
+.bookNowBtn {
     background-color: #0063ff;
     position: fixed;
     margin: 20px;
-    right : 0;
+    right: 0;
     width: 175px;
-    bottom : 0;
+    bottom: 0;
     font-size: 14pt;
     color: white;
     text-align: center;
@@ -42,13 +47,13 @@
     box-shadow: 1px 1px 15px #555555;
 }
 
-.goToTop{
+.goToTop {
     background-color: #5b00ff;
     position: fixed;
     margin: 20px 20px 60px 20px;
-    right : 0;
+    right: 0;
     width: 175px;
-    bottom : 0;
+    bottom: 0;
     font-size: 14pt;
     color: white;
     text-align: center;

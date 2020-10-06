@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 let Jungle = () => {
     const [pkgs, setpkgs] = useState([])
     async function packagesList() {
-        const Res = await axios.get("http://localhost:4545/api/v1/packages/getAllPackages")
+        const Res = await axios.get("https://skyway-server.herokuapp.com/api/v1/packages/getAllPackages")
         let data = Res.data.filter((pkg) => {
             return ((pkg.category[0].toUpperCase() === "JUNGLE LODGES") ? pkg : null)
         })
