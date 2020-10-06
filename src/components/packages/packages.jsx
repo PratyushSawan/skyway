@@ -48,7 +48,7 @@ let Packages = () => {
             }}
         >
             <img
-                src={require('../asserts/animated/Pulse-1s-200px.svg')}
+                src={require('../assets/animated/Pulse-1s-200px.svg')}
                 alt=''
             />
         </div>
